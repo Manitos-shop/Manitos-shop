@@ -11,7 +11,7 @@
 {
   "name": "4 Hermanos",
   "price": "150",
-  "stock": "por_confirmar",
+  "stock": "disponible",
   "mutation": "",
   "image": "images/20260914_105646.jpg",
   "featured": false,
