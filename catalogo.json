@@ -1,22 +1,21 @@
 [
-  {
     "name": "1x1x1x1",
-    "price": "100",
-    "stock": "disponible",
-    "mutation": "",
-    "image": "image": "images/Phantom_1x1x1x1 (1).webp",
-    "featured": false,
+  "price": "100",
+  "stock": "disponible",
+  "mutation": "",
+  "image": "images/Phantom_1x1x1x1 (1).webp",
+  "featured": false,
   "notes": "Hgh"
 },
-  {
-    "name": "4 Hermanos",
-    "price": "150",
-    "stock": "por_confirmar",
-    "mutation": "",
-    "image": "",
-    "featured": false,
-    "notes": ""
-  },
+{
+  "name": "4 Hermanos",
+  "price": "150",
+  "stock": "por_confirmar",
+  "mutation": "",
+  "image": "",
+  "featured": false,
+  "notes": ""
+},
   {
     "name": "67",
     "price": "",
