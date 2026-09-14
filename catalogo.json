@@ -25,15 +25,15 @@
 "image": "images/Fantasma_67(1).jpg",
 "featured": false,
 "notes": "$90M/s · $1.2B"
-  },
+  },   
   {
-    "name": "Acuanauta",
-    "price": "",
-    "stock": "por_confirmar",
-    "mutation": "",
-    "image": "",
-    "featured": false,
-    "notes": ""
+  "name": "Acuanauta",
+  "price": "35",
+  "stock": "disponible",
+  "mutation": "",
+  "image": "images/Acuanauta.jpg",
+  "featured": false,
+  "notes": "Dios Brainrot · $2.9M/s · $45.5M"
   },
   {
     "name": "Aguacate de Pipi",
