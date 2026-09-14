@@ -19,12 +19,12 @@
 },
   {
     "name": "67",
-    "price": "",
-    "stock": "por_confirmar",
-    "mutation": "",
-    "image": "",
-    "featured": false,
-    "notes": ""
+    "price": "80",
+"stock": "disponible",
+"mutation": "Fantasma",
+"image": "images/Fantasma_67(1).jpg",
+"featured": false,
+"notes": "$90M/s · $1.2B"
   },
   {
     "name": "Acuanauta",
