@@ -1,39 +1,40 @@
-[ 
+
+[
   {
-       "name": "1x1x1x1",
-  "price": "100",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/Phantom_1x1x1x1 (1).webp",
-  "featured": false,
-  "notes": "Hgh"
-},
-{
-  "name": "4 Hermanos",
-  "price": "150",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/20260914_105646.jpg",
-  "featured": false,
-  "notes": ""
-},
+    "name": "1x1x1x1",
+    "price": "100",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/Phantom_1x1x1x1 (1).webp",
+    "featured": false,
+    "notes": "Hgh"
+  },
+  {
+    "name": "4 Hermanos",
+    "price": "150",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/20260914_105646.jpg",
+    "featured": false,
+    "notes": ""
+  },
   {
     "name": "67",
     "price": "80",
-"stock": "disponible",
-"mutation": "Fantasma",
-"image": "images/Fantasma_67(1).jpg",
-"featured": false,
-"notes": "$90M/s · $1.2B"
-  },   
+    "stock": "disponible",
+    "mutation": "Fantasma",
+    "image": "images/Fantasma_67(1).jpg",
+    "featured": false,
+    "notes": "$90M/s · $1.2B"
+  },
   {
-  "name": "Acuanauta",
-  "price": "35",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/Acuanauta_v2.jpg",
-  "featured": false,
-  "notes": "Dios Brainrot · $2.9M/s · $45.5M"
+    "name": "Acuanauta",
+    "price": "35",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/Acuanauta_v2.jpg",
+    "featured": false,
+    "notes": "Dios Brainrot · $2.9M/s · $45.5M"
   },
   {
     "name": "Aguacate de Pipi",
@@ -78,7 +79,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $4.2M/s"
   },
   {
     "name": "Arcadopus",
@@ -177,7 +178,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $1.5M/s"
   },
   {
     "name": "Bicicleta de Chicleto",
@@ -312,7 +313,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $18.2K/s"
   },
   {
     "name": "Bufalino Bomboberrino",
@@ -483,7 +484,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $15K/s"
   },
   {
     "name": "Colegio Esok",
@@ -582,7 +583,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Dios Brainrot · $316K/s"
   },
   {
     "name": "Frullato Framingo",
@@ -591,7 +592,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $20M/s"
   },
   {
     "name": "Gatito Tacoto",
@@ -618,7 +619,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $18M/s"
   },
   {
     "name": "Gkrini Espiaderini",
@@ -861,7 +862,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Dios Brainrot · $280K/s"
   },
   {
     "name": "Lirilì Larilà",
@@ -1212,7 +1213,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $3M/s"
   },
   {
     "name": "Rollo de Wombo",
@@ -1284,7 +1285,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $8M/s"
   },
   {
     "name": "Ta Ta Ta Ta Sahur",
