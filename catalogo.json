@@ -1,39 +1,39 @@
-[ 
+[
   {
-       "name": "1x1x1x1",
-  "price": "100",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/Phantom_1x1x1x1 (1).webp",
-  "featured": false,
-  "notes": "Hgh"
-},
-{
-  "name": "4 Hermanos",
-  "price": "150",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/20260914_105646.jpg",
-  "featured": false,
-  "notes": ""
-},
+    "name": "1x1x1x1",
+    "price": "100",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/Phantom_1x1x1x1 (1).webp",
+    "featured": false,
+    "notes": "Hgh"
+  },
+  {
+    "name": "4 Hermanos",
+    "price": "150",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/20260914_105646.jpg",
+    "featured": false,
+    "notes": ""
+  },
   {
     "name": "67",
     "price": "80",
-"stock": "disponible",
-"mutation": "Fantasma",
-"image": "images/Fantasma_67(1).jpg",
-"featured": false,
-"notes": "$90M/s · $1.2B"
-  },   
+    "stock": "disponible",
+    "mutation": "Fantasma",
+    "image": "images/Fantasma_67(1).jpg",
+    "featured": false,
+    "notes": "$90M/s · $1.2B"
+  },
   {
-  "name": "Acuanauta",
-  "price": "35",
-  "stock": "disponible",
-  "mutation": "",
-  "image": "images/Acuanauta_v2.jpg",
-  "featured": false,
-  "notes": "Dios Brainrot · $2.9M/s · $45.5M"
+    "name": "Acuanauta",
+    "price": "35",
+    "stock": "disponible",
+    "mutation": "",
+    "image": "images/Acuanauta_v2.jpg",
+    "featured": false,
+    "notes": "Dios Brainrot · $2.9M/s · $45.5M"
   },
   {
     "name": "Aguacate de Pipi",
@@ -357,7 +357,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $240K/s"
   },
   {
     "name": "Cachorro Melonito",
@@ -474,7 +474,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $3M/s"
   },
   {
     "name": "Cocoteddy",
@@ -519,7 +519,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $15M/s"
   },
   {
     "name": "DJ Panda",
@@ -780,7 +780,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $325K/s"
   },
   {
     "name": "Ladrillo de sandía de Gorilo",
@@ -870,7 +870,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $3/s"
   },
   {
     "name": "Los Bombinitos",
@@ -879,7 +879,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $220K/s"
   },
   {
     "name": "Los Burritos",
@@ -888,7 +888,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $8.5M/s"
   },
   {
     "name": "Los Chihuaninis",
@@ -897,7 +897,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $160K/s"
   },
   {
     "name": "Los Combinados",
@@ -906,7 +906,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $15M/s"
   },
   {
     "name": "Los Cornis",
@@ -924,7 +924,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $55K/s"
   },
   {
     "name": "Los Gatitos",
@@ -933,7 +933,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $275K/s"
   },
   {
     "name": "Los Jobcitos",
@@ -942,7 +942,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $1.5M/s"
   },
   {
     "name": "Los Orcalitos",
@@ -951,7 +951,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $235K/s"
   },
   {
     "name": "Los Sigmas",
@@ -969,7 +969,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $260K/s"
   },
   {
     "name": "Los Tangcitos",
@@ -996,7 +996,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $500K/s"
   },
   {
     "name": "Los Tralaleritos",
@@ -1005,7 +1005,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $500K/s"
   },
   {
     "name": "Los Tungtungtungcitos",
@@ -1014,7 +1014,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $210K/s"
   },
   {
     "name": "Lumaca Malefica",
@@ -1041,7 +1041,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Legendary · $1.2K/s"
   },
   {
     "name": "Máquina de Pickone",
@@ -1068,7 +1068,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $50K/s"
   },
   {
     "name": "Odin, Din, Din, Din",
@@ -1077,7 +1077,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $75K/s"
   },
   {
     "name": "Orcalero Orcala",
@@ -1086,7 +1086,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $100K/s"
   },
   {
     "name": "Orcalita Orcala",
@@ -1095,7 +1095,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $240K/s"
   },
   {
     "name": "Pakrahmatmamat",
@@ -1104,7 +1104,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $215K/s"
   },
   {
     "name": "Pakrahmatmatina",
@@ -1113,7 +1113,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $225K/s"
   },
   {
     "name": "Pandaccini Bananini",
@@ -1122,7 +1122,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Legendary · $1.25K/s"
   },
   {
     "name": "Perochello Lemonchello",
@@ -1131,7 +1131,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Epic · $160/s"
   },
   {
     "name": "Pingüino Cocosino",
@@ -1140,7 +1140,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Epic · $300/s"
   },
   {
     "name": "Pingüino Salamino",
@@ -1149,7 +1149,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Epic · $250/s"
   },
   {
     "name": "Pipi Corni",
@@ -1158,7 +1158,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $14/s"
   },
   {
     "name": "Pipi Kiwi",
@@ -1167,7 +1167,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $13/s"
   },
   {
     "name": "Pizzanini de Noobini",
@@ -1176,7 +1176,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $1/s"
   },
   {
     "name": "Punto de calor de la Olla",
@@ -1185,7 +1185,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $2.5M/s"
   },
   {
     "name": "Queso Tim",
@@ -1194,7 +1194,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $5/s"
   },
   {
     "name": "Robo Grafito",
@@ -1221,7 +1221,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Epic · $275/s"
   },
   {
     "name": "Sammyni Spyderini",
@@ -1230,7 +1230,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $325K/s"
   },
   {
     "name": "Sandía Pi Pi",
@@ -1239,7 +1239,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Legendary · $1.3K/s"
   },
   {
     "name": "Sombrero de Topolino",
@@ -1257,7 +1257,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $3.5K/s"
   },
   {
     "name": "Squalanana",
@@ -1266,7 +1266,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $250K/s"
   },
   {
     "name": "Strawberrita",
@@ -1293,7 +1293,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Rare · $55/s"
   },
   {
     "name": "Tablero de Peces",
@@ -1302,7 +1302,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $825K/s"
   },
   {
     "name": "Taco de Capi",
@@ -1311,7 +1311,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $155K/s"
   },
   {
     "name": "Taco de Tipi Top",
@@ -1320,7 +1320,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $75K/s"
   },
   {
     "name": "Talpa de Fero",
@@ -1329,7 +1329,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Common · $9/s"
   },
   {
     "name": "Tang Tang Keletang",
@@ -1338,7 +1338,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $33.5M/s"
   },
   {
     "name": "Te Te Te Sahur",
@@ -1347,7 +1347,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $9.5K/s"
   },
   {
     "name": "Tentáculo Técnico",
@@ -1356,7 +1356,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $292.5K/s"
   },
   {
     "name": "Ti Ti Ti Sahur",
@@ -1365,7 +1365,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Epic · $225/s"
   },
   {
     "name": "Tictac Sahur",
@@ -1374,7 +1374,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $37.5M/s"
   },
   {
     "name": "Tigrilini Watermelini",
@@ -1383,7 +1383,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $6.5K/s"
   },
   {
     "name": "Tigroligre Frutonni",
@@ -1392,7 +1392,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $60K/s"
   },
   {
     "name": "Torrtuginni Dragonfrutini",
@@ -1401,7 +1401,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $350K/s"
   },
   {
     "name": "Tortuga Cisterna",
@@ -1437,7 +1437,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $700K/s"
   },
   {
     "name": "Tracoducutulu Delapeladustuz",
@@ -1446,7 +1446,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Mythic · $12K/s"
   },
   {
     "name": "Tractoro Dinosaurio",
@@ -1455,7 +1455,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $230K/s"
   },
   {
     "name": "Tralala Zombie",
@@ -1464,7 +1464,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $500K/s"
   },
   {
     "name": "Tralalero Extinto",
@@ -1473,7 +1473,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $450K/s"
   },
   {
     "name": "Tralalero Tralala",
@@ -1482,7 +1482,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $50K/s"
   },
   {
     "name": "Tralalita Tralala",
@@ -1491,7 +1491,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $100K/s"
   },
   {
     "name": "Trenostruzzo Turbo 3000",
@@ -1500,7 +1500,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $150K/s"
   },
   {
     "name": "Tric Trac Baraboom",
@@ -1518,7 +1518,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Rare · $15/s"
   },
   {
     "name": "Trippi, Trippi, Trippi, Trippa",
@@ -1527,7 +1527,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $175K/s"
   },
   {
     "name": "Trullimero Trullicina",
@@ -1545,7 +1545,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Brainrot God · $150K/s"
   },
   {
     "name": "Var Var Var",
@@ -1563,6 +1563,6 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": ""
+    "notes": "Secret · $65M/s"
   }
 ]
