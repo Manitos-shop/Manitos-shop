@@ -1,39 +1,39 @@
-[
+[ 
   {
-    "name": "1x1x1x1",
-    "price": "100",
-    "stock": "disponible",
-    "mutation": "",
-    "image": "images/Phantom_1x1x1x1 (1).webp",
-    "featured": false,
-    "notes": "Hgh"
-  },
-  {
-    "name": "4 Hermanos",
-    "price": "150",
-    "stock": "disponible",
-    "mutation": "",
-    "image": "images/20260914_105646.jpg",
-    "featured": false,
-    "notes": "Secret · $3.75M/s"
-  },
+       "name": "1x1x1x1",
+  "price": "100",
+  "stock": "disponible",
+  "mutation": "",
+  "image": "images/Phantom_1x1x1x1 (1).webp",
+  "featured": false,
+  "notes": "Hgh"
+},
+{
+  "name": "4 Hermanos",
+  "price": "150",
+  "stock": "disponible",
+  "mutation": "",
+  "image": "images/20260914_105646.jpg",
+  "featured": false,
+  "notes": ""
+},
   {
     "name": "67",
     "price": "80",
-    "stock": "disponible",
-    "mutation": "Fantasma",
-    "image": "images/Fantasma_67(1).jpg",
-    "featured": false,
-    "notes": "$90M/s · $1.2B"
-  },
+"stock": "disponible",
+"mutation": "Fantasma",
+"image": "images/Fantasma_67(1).jpg",
+"featured": false,
+"notes": "$90M/s · $1.2B"
+  },   
   {
-    "name": "Acuanauta",
-    "price": "35",
-    "stock": "disponible",
-    "mutation": "",
-    "image": "images/Acuanauta_v2.jpg",
-    "featured": false,
-    "notes": "Dios Brainrot · $2.9M/s · $45.5M"
+  "name": "Acuanauta",
+  "price": "35",
+  "stock": "disponible",
+  "mutation": "",
+  "image": "images/Acuanauta_v2.jpg",
+  "featured": false,
+  "notes": "Dios Brainrot · $2.9M/s · $45.5M"
   },
   {
     "name": "Aguacate de Pipi",
@@ -69,7 +69,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Brainrot God · $300K/s"
+    "notes": ""
   },
   {
     "name": "Aquarino",
@@ -78,7 +78,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $4.2M/s"
+    "notes": ""
   },
   {
     "name": "Arcadopus",
@@ -177,7 +177,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $1.5M/s"
+    "notes": ""
   },
   {
     "name": "Bicicleta de Chicleto",
@@ -213,7 +213,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $3.2M/s"
+    "notes": ""
   },
   {
     "name": "Bola de Peluche",
@@ -240,7 +240,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $1M/s"
+    "notes": ""
   },
   {
     "name": "Bombardini Tortinii",
@@ -312,7 +312,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Mythic · $18.2K/s"
+    "notes": ""
   },
   {
     "name": "Bufalino Bomboberrino",
@@ -321,7 +321,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $32M/s"
+    "notes": ""
   },
   {
     "name": "Bulbito Bandido Traktorito",
@@ -384,7 +384,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $22M/s"
+    "notes": ""
   },
   {
     "name": "Carlino",
@@ -420,7 +420,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $16M/s"
+    "notes": ""
   },
   {
     "name": "Chico Sigma",
@@ -465,7 +465,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $33.5M/s"
+    "notes": ""
   },
   {
     "name": "Cocodrilo de Quesadillas",
@@ -483,7 +483,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Mythic · $15K/s"
+    "notes": ""
   },
   {
     "name": "Colegio Esok",
@@ -519,7 +519,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $15M/s"
+    "notes": ""
   },
   {
     "name": "DJ Panda",
@@ -529,15 +529,6 @@
     "image": "",
     "featured": false,
     "notes": ""
-  },
-  {
-    "name": "Dragon Aquanini",
-    "price": "",
-    "stock": "por_confirmar",
-    "mutation": "",
-    "image": "",
-    "featured": false,
-    "notes": "Secret · $375M/s"
   },
   {
     "name": "Dul Dul Dul",
@@ -564,7 +555,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $60M/s"
+    "notes": ""
   },
   {
     "name": "Espíritu de Granchiello",
@@ -591,7 +582,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Brainrot God · $316K/s"
+    "notes": ""
   },
   {
     "name": "Frullato Framingo",
@@ -600,7 +591,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $20M/s"
+    "notes": ""
   },
   {
     "name": "Gatito Tacoto",
@@ -627,7 +618,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $18M/s"
+    "notes": ""
   },
   {
     "name": "Gkrini Espiaderini",
@@ -645,7 +636,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $1.25M/s"
+    "notes": ""
   },
   {
     "name": "Gralipuss Medussi",
@@ -672,7 +663,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $1.3M/s"
+    "notes": ""
   },
   {
     "name": "Helado de Sundrillo",
@@ -681,7 +672,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Brainrot God · $180K/s"
+    "notes": ""
   },
   {
     "name": "Hipopótamo Cactal",
@@ -756,15 +747,6 @@
     "notes": ""
   },
   {
-    "name": "Kraken",
-    "price": "",
-    "stock": "por_confirmar",
-    "mutation": "",
-    "image": "",
-    "featured": false,
-    "notes": "Secret · $200M/s"
-  },
-  {
     "name": "Krupuk por la mañana",
     "price": "",
     "stock": "por_confirmar",
@@ -798,7 +780,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Referencia de índice"
+    "notes": ""
   },
   {
     "name": "Ladrillo de sandía de Gorilo",
@@ -834,7 +816,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $23M/s"
+    "notes": ""
   },
   {
     "name": "Las Quesadillas",
@@ -879,7 +861,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Brainrot God · $280K/s"
+    "notes": ""
   },
   {
     "name": "Lirilì Larilà",
@@ -933,7 +915,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $3.1M/s"
+    "notes": ""
   },
   {
     "name": "Los Crocodilitos",
@@ -978,7 +960,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $2.3M/s"
+    "notes": ""
   },
   {
     "name": "Los Tacos de Tipi",
@@ -996,7 +978,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $42.5M/s"
+    "notes": ""
   },
   {
     "name": "Los Tictacs",
@@ -1005,7 +987,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $60M/s"
+    "notes": ""
   },
   {
     "name": "Los Tortus",
@@ -1041,7 +1023,7 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Brainrot God · $265K/s"
+    "notes": ""
   },
   {
     "name": "Lumacho de Helado",
@@ -1050,11 +1032,537 @@
     "mutation": "",
     "image": "",
     "featured": false,
-    "notes": "Secret · $1.4M/s"
+    "notes": ""
   },
   {
     "name": "Mamá de Cocosini",
     "price": "",
     "stock": "por_confirmar",
     "mutation": "",
-    "image":
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Máquina de Pickone",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Mariachi Corazones",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Matteo",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Odin, Din, Din, Din",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Orcalero Orcala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Orcalita Orcala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pakrahmatmamat",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pakrahmatmatina",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pandaccini Bananini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Perochello Lemonchello",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pingüino Cocosino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pingüino Salamino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pipi Corni",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pipi Kiwi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Pizzanini de Noobini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Punto de calor de la Olla",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Queso Tim",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Robo Grafito",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Rocketini Frostini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Rollo de Wombo",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Sammyni Spyderini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Sandía Pi Pi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Sombrero de Topolino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Spioniro Golubiro",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Squalanana",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Strawberrita",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Sushi Inu",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Ta Ta Ta Ta Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tablero de Peces",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Taco de Capi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Taco de Tipi Top",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Talpa de Fero",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tang Tang Keletang",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Te Te Te Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tentáculo Técnico",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Ti Ti Ti Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tictac Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tigrilini Watermelini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tigroligre Frutonni",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Torrtuginni Dragonfrutini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tortuga Cisterna",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tortuginni Sandcastlini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tostador de Rinocerontes",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Trabajo Trabajo Trabajo Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tracoducutulu Delapeladustuz",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tractoro Dinosaurio",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tralala Zombie",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tralalero Extinto",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tralalero Tralala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tralalita Tralala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Trenostruzzo Turbo 3000",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Tric Trac Baraboom",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Trippi Troppi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Trippi, Trippi, Trippi, Trippa",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Trullimero Trullicina",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Urubini Flamenguini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Var Var Var",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  },
+  {
+    "name": "Ventoliero Pavonero",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": ""
+  }
+]
