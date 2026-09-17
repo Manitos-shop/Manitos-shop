@@ -715,4 +715,854 @@
     "price": "",
     "stock": "por_confirmar",
     "mutation": "",
-    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/bra
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/girafa-celestre.png",
+    "featured": false,
+    "notes": "Brainrot God · $20K/s"
+  },
+  {
+    "name": "Karkerkar Kurkur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $325K/s"
+  },
+  {
+    "name": "Ketchuru y Musturu",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/ketchuru-and-musturu.png",
+    "featured": false,
+    "notes": "Secret · $42.5M/s"
+  },
+  {
+    "name": "Ketupat Rápido",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $35M/s"
+  },
+  {
+    "name": "Krupuk por la mañana",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $290K/s"
+  },
+  {
+    "name": "La Cucaracha",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/la-cucaracha.png",
+    "featured": false,
+    "notes": "Secret · $475K/s"
+  },
+  {
+    "name": "La Gran Combinación",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/la-grande-combinasion.png",
+    "featured": false,
+    "notes": "Secret · $10M/s"
+  },
+  {
+    "name": "La Vacca Saturno Saturnita",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/la-vacca-saturno-saturnita.png",
+    "featured": false,
+    "notes": "Secret · $325K/s"
+  },
+  {
+    "name": "Ladrillo de sandía de Gorilo",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $8K/s"
+  },
+  {
+    "name": "Las Chicoteiras",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $7M/s"
+  },
+  {
+    "name": "Las Cucarachas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $1.2M/s"
+  },
+  {
+    "name": "Las Frutas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $23M/s"
+  },
+  {
+    "name": "Las Quesadillas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $4.5M/s"
+  },
+  {
+    "name": "Las Tralalertitas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $650K/s"
+  },
+  {
+    "name": "Las Vaquitas Saturnitas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $750K/s"
+  },
+  {
+    "name": "Lavadorito Espinoso",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $45M/s"
+  },
+  {
+    "name": "Lemonita Splashita",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/lemonita-splashita.png",
+    "featured": false,
+    "notes": "Brainrot God · $280K/s"
+  },
+  {
+    "name": "Lirilì Larilà",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Common · $3/s"
+  },
+  {
+    "name": "Los Bombinitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $220K/s"
+  },
+  {
+    "name": "Los Burritos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $8.5M/s"
+  },
+  {
+    "name": "Los Chihuaninis",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $160K/s"
+  },
+  {
+    "name": "Los Combinados",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $15M/s"
+  },
+  {
+    "name": "Los Cornis",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/los-cornis.png",
+    "featured": false,
+    "notes": "Secret · $3.1M/s"
+  },
+  {
+    "name": "Los Crocodilitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $55K/s"
+  },
+  {
+    "name": "Los Gatitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $275K/s"
+  },
+  {
+    "name": "Los Jobcitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $1.5M/s"
+  },
+  {
+    "name": "Los Orcalitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $235K/s"
+  },
+  {
+    "name": "Los Sigmas",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/los-sigmas.png",
+    "featured": false,
+    "notes": "Secret · $2.3M/s"
+  },
+  {
+    "name": "Los Tacos de Tipi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $260K/s"
+  },
+  {
+    "name": "Los Tangcitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/los-tangcitos.png",
+    "featured": false,
+    "notes": "Secret · $42.5M/s"
+  },
+  {
+    "name": "Los Tictacs",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/los-tictacs.png",
+    "featured": false,
+    "notes": "Secret · $60M/s"
+  },
+  {
+    "name": "Los Tortus",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $500K/s"
+  },
+  {
+    "name": "Los Tralaleritos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/los-tralaleritos.png",
+    "featured": false,
+    "notes": "Secret · $500K/s"
+  },
+  {
+    "name": "Los Tungtungtungcitos",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $210K/s"
+  },
+  {
+    "name": "Lumaca Malefica",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $265K/s"
+  },
+  {
+    "name": "Lumacho de Helado",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $1.4M/s"
+  },
+  {
+    "name": "Mamá de Cocosini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Legendary · $1.2K/s"
+  },
+  {
+    "name": "Máquina de Pickone",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $225K/s"
+  },
+  {
+    "name": "Mariachi Corazones",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $12.5M/s"
+  },
+  {
+    "name": "Matteo",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $50K/s"
+  },
+  {
+    "name": "Odin, Din, Din, Din",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $75K/s"
+  },
+  {
+    "name": "Orcalero Orcala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $100K/s"
+  },
+  {
+    "name": "Orcalita Orcala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $240K/s"
+  },
+  {
+    "name": "Pakrahmatmamat",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $215K/s"
+  },
+  {
+    "name": "Pakrahmatmatina",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $225K/s"
+  },
+  {
+    "name": "Pandaccini Bananini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Legendary · $1.25K/s"
+  },
+  {
+    "name": "Perochello Lemonchello",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/perochello-lemonchello.png",
+    "featured": false,
+    "notes": "Epic · $160/s"
+  },
+  {
+    "name": "Pingüino Cocosino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Epic · $300/s"
+  },
+  {
+    "name": "Pingüino Salamino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/salamino-penguino.png",
+    "featured": false,
+    "notes": "Epic · $250/s"
+  },
+  {
+    "name": "Pipi Corni",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/pipi-corni.png",
+    "featured": false,
+    "notes": "Common · $14/s"
+  },
+  {
+    "name": "Pipi Kiwi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/pipi-kiwi.png",
+    "featured": false,
+    "notes": "Common · $13/s"
+  },
+  {
+    "name": "Pizzanini de Noobini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/noobini-pizzanini.png",
+    "featured": false,
+    "notes": "Common · $1/s"
+  },
+  {
+    "name": "Punto de calor de la Olla",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $2.5M/s"
+  },
+  {
+    "name": "Queso Tim",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/tim-cheese.png",
+    "featured": false,
+    "notes": "Common · $5/s"
+  },
+  {
+    "name": "Robo Grafito",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "God · $317.5K/s"
+  },
+  {
+    "name": "Rocketini Frostini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $3M/s"
+  },
+  {
+    "name": "Rollo de Wombo",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Epic · $275/s"
+  },
+  {
+    "name": "Sammyni Spyderini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $325K/s"
+  },
+  {
+    "name": "Sandía Pi Pi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Legendary · $1.3K/s"
+  },
+  {
+    "name": "Sombrero de Topolino",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/ombrello-topolino.png",
+    "featured": false,
+    "notes": "Secret · $6.5M/s"
+  },
+  {
+    "name": "Spioniro Golubiro",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $3.5K/s"
+  },
+  {
+    "name": "Squalanana",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $250K/s"
+  },
+  {
+    "name": "Strawberrita",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $6.5M/s"
+  },
+  {
+    "name": "Sushi Inu",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $8M/s"
+  },
+  {
+    "name": "Ta Ta Ta Ta Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Rare · $55/s"
+  },
+  {
+    "name": "Tablero de Peces",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $825K/s"
+  },
+  {
+    "name": "Taco de Capi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $155K/s"
+  },
+  {
+    "name": "Taco de Tipi Top",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $75K/s"
+  },
+  {
+    "name": "Talpa de Fero",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Common · $9/s"
+  },
+  {
+    "name": "Tang Tang Keletang",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $33.5M/s"
+  },
+  {
+    "name": "Te Te Te Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $9.5K/s"
+  },
+  {
+    "name": "Tentáculo Técnico",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $292.5K/s"
+  },
+  {
+    "name": "Ti Ti Ti Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Epic · $225/s"
+  },
+  {
+    "name": "Tictac Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $37.5M/s"
+  },
+  {
+    "name": "Tigrilini Watermelini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $6.5K/s"
+  },
+  {
+    "name": "Tigroligre Frutonni",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $60K/s"
+  },
+  {
+    "name": "Torrtuginni Dragonfrutini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $350K/s"
+  },
+  {
+    "name": "Tortuga Cisterna",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/tartaruga-cisterna.png",
+    "featured": false,
+    "notes": "God · $250K/s"
+  },
+  {
+    "name": "Tortuginni Sandcastlini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "God · $317.5K/s"
+  },
+  {
+    "name": "Tostador de Rinocerontes",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $2.1K/s"
+  },
+  {
+    "name": "Trabajo Trabajo Trabajo Sahur",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $700K/s"
+  },
+  {
+    "name": "Tracoducutulu Delapeladustuz",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Mythic · $12K/s"
+  },
+  {
+    "name": "Tractoro Dinosaurio",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $230K/s"
+  },
+  {
+    "name": "Tralala Zombie",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $500K/s"
+  },
+  {
+    "name": "Tralalero Extinto",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $450K/s"
+  },
+  {
+    "name": "Tralalero Tralala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $50K/s"
+  },
+  {
+    "name": "Tralalita Tralala",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $100K/s"
+  },
+  {
+    "name": "Trenostruzzo Turbo 3000",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $150K/s"
+  },
+  {
+    "name": "Tric Trac Baraboom",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Rare · $65/s"
+  },
+  {
+    "name": "Trippi Troppi",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/trippi-troppi.png",
+    "featured": false,
+    "notes": "Rare · $15/s"
+  },
+  {
+    "name": "Trippi, Trippi, Trippi, Trippa",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $175K/s"
+  },
+  {
+    "name": "Trullimero Trullicina",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/trulimero-trulicina.png",
+    "featured": false,
+    "notes": "Epic · $125/s"
+  },
+  {
+    "name": "Urubini Flamenguini",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Brainrot God · $150K/s"
+  },
+  {
+    "name": "Var Var Var",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $5.5M/s"
+  },
+  {
+    "name": "Ventoliero Pavonero",
+    "price": "",
+    "stock": "por_confirmar",
+    "mutation": "",
+    "image": "",
+    "featured": false,
+    "notes": "Secret · $65M/s"
+  }
+]
