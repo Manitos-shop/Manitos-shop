@@ -1,0 +1,44 @@
+{
+  "paints": [
+    {
+      "name": "Fantasma",
+      "status": "pendiente",
+      "price": "",
+      "note": ""
+    }
+  ],
+  "services": [
+    {
+      "id": "robux",
+      "icon": "💎",
+      "name": "Robux y Gamepasses",
+      "status": "pendiente",
+      "price": "Por pedido",
+      "description": "Productos por pedido y gamepasses de juegos disponibles."
+    },
+    {
+      "id": "subastas",
+      "icon": "🔨",
+      "name": "Subastas Manitos",
+      "status": "pendiente",
+      "price": "",
+      "description": "Consulta las subastas activas y cómo participar."
+    },
+    {
+      "id": "busqueda",
+      "icon": "🔎",
+      "name": "Búsqueda de Brainrots",
+      "status": "pendiente",
+      "price": "",
+      "description": "Ayuda para localizar Brainrots específicos dentro de la comunidad."
+    },
+    {
+      "id": "trade",
+      "icon": "🔄",
+      "name": "Compra / Venta / Trade",
+      "status": "pendiente",
+      "price": "",
+      "description": "Consulta operaciones disponibles y condiciones de entrega."
+    }
+  ]
+}
