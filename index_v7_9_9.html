@@ -846,7 +846,13 @@ function render(){
     }else{
       setAutoImage(img,i.name,0);
     }
+grid.appendChild(c);
+return;
 
+c.querySelector('.buy').onclick=()=>wa(i);
+c.querySelector('.copy').onclick=()=>navigator.clipboard?.writeText(i.name);
+c.querySelector('.editbtn').onclick=()=>openEditor(i.name);
+grid.appendChild(c);
     c.querySelector('.buy').onclick=()=>wa(i);
     c.querySelector('.copy').onclick=()=>navigator.clipboard?.writeText(i.name);
     c.querySelector('.editbtn').onclick=()=>openEditor(i.name);
