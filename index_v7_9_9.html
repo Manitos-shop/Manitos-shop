@@ -803,55 +803,56 @@ function render(){
 
 filterButtons.forEach(b=>b.onclick=()=>{filterButtons.forEach(x=>x.classList.remove('active'));b.classList.add('active');currentFilter=b.dataset.filter;filterLabel.textContent=b.textContent+(currentMutation==='Todas'?'':' · '+currentMutation);render()});
 ['Todos',...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].forEach(l=>{const b=document.createElement('button');b.textContent=l;if(l==='Todos')b.classList.add('active');b.onclick=()=>{[...az.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');currentLetter=l;render()};az.appendChild(b)});
-
-// V7.9.9 · barra de mutaciones automática según el catálogo real
+// V7.9.9 · barra fija de mutaciones
 const mutationBar=document.getElementById('mutationBar');
 
+const MUTATIONS=[
+  'Todas',
+  'Fantasma',
+  'Crystal',
+  'Cyber',
+  'Rainbow',
+  'Divine',
+  'Cursed',
+  'Radioactive',
+  'Yin Yang',
+  'Galaxy',
+  'Lava',
+  'Candy',
+  'Bloodrot',
+  'Diamond',
+  'Gold',
+  'Sin mutación'
+];
+
 function refreshMutationBar(){
-  const unique=new Map();
-  let hasNone=false;
-
-  items.forEach(i=>{
-    const raw=String(i.mutation||'').trim();
-    const key=norm(raw);
-
-    if(!raw || key==='default' || key==='sin mutacion'){
-      hasNone=true;
-      return;
-    }
-
-    if(!unique.has(key)) unique.set(key,raw);
-  });
-
-  const realMutations=[...unique.values()].sort((a,b)=>
-    a.localeCompare(b,'es',{sensitivity:'base'})
-  );
-
-  const visible=['Todas',...realMutations];
-  if(hasNone) visible.push('Sin mutación');
-
-  if(!visible.some(v=>norm(v)===norm(currentMutation))){
+  if(!MUTATIONS.some(v=>norm(v)===norm(currentMutation))){
     currentMutation='Todas';
   }
 
   mutationBar.innerHTML='';
 
-  visible.forEach(m=>{
+  MUTATIONS.forEach(m=>{
     const b=document.createElement('button');
     b.type='button';
     b.textContent=m;
     b.dataset.mutation=m;
 
-    if(norm(m)===norm(currentMutation)) b.classList.add('active');
+    if(norm(m)===norm(currentMutation)){
+      b.classList.add('active');
+    }
 
     b.onclick=()=>{
       [...mutationBar.children].forEach(x=>x.classList.remove('active'));
       b.classList.add('active');
       currentMutation=m;
-      filterLabel.textContent=(currentFilter==='all'
-        ?'Todos'
-        :document.querySelector('.filters button.active')?.textContent||'Todos')
+
+      filterLabel.textContent=
+        (currentFilter==='all'
+          ? 'Todos'
+          : document.querySelector('.filters button.active')?.textContent || 'Todos')
         +(m==='Todas'?'':' · '+m);
+
       render();
     };
 
