@@ -538,7 +538,26 @@ Alessio | 60 | agotado | Phantom | images/Alessio.jpg | $85K/s | sí"></textarea
 <div class="manage-actions"><button type="button" id="mutationSelectVisible">☑️ Seleccionar visibles</button><button type="button" id="mutationClearSelection">✖️ Limpiar</button></div>
 <div id="mutationBulkList" class="mutation-admin-list"></div>
 <div id="mutationSelectedCount" class="hint">0 seleccionados</div>
-<label>Mutación</label><input id="mutationBulkValue" list="mutationOptions" placeholder="Ej. Fantasma"><datalist id="mutationOptions"></datalist>
+<label>Mutación</label>
+<select id="mutationBulkValue">
+  <option value="">Seleccionar mutación</option>
+  <option value="Fantasma">Fantasma</option>
+  <option value="Crystal">Crystal</option>
+  <option value="Cyber">Cyber</option>
+  <option value="Rainbow">Rainbow</option>
+  <option value="Divine">Divine</option>
+  <option value="Cursed">Cursed</option>
+  <option value="Radioactive">Radioactive</option>
+  <option value="Yin Yang">Yin Yang</option>
+  <option value="Galaxy">Galaxy</option>
+  <option value="Lava">Lava</option>
+  <option value="Candy">Candy</option>
+  <option value="Bloodrot">Bloodrot</option>
+  <option value="Diamond">Diamond</option>
+  <option value="Gold">Gold</option>
+</select>
+
+<datalist id="mutationOptions" style="display:none"></datalist>
 <div class="manage-actions"><button type="button" class="save" id="mutationApplyBulk">✅ Aplicar</button><button type="button" class="danger" id="mutationRemoveBulk">🧹 Quitar mutación</button></div>
 </div>
 
