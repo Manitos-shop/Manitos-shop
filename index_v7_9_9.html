@@ -822,7 +822,9 @@ function render(){
 
   list.forEach(i=>{
     const c=document.createElement('article');
-    c.className='card';
+    c.className='card';c.innerHTML=`<div style="padding:30px;color:white;font-size:24px">${i.name}</div>`;
+grid.appendChild(c);
+return;
 
     const custom=String(i.image||'').trim();
     const refLabel=custom?'':`<div class="auto-ref">Imagen base automática de referencia${i.mutation?' · la mutación se indica abajo':''}</div>`;
