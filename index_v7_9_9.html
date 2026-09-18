@@ -1060,6 +1060,65 @@ function bulkStock(v){
   return String(v??'').trim()? 'por_confirmar' : '';
 }
 function bulkBool(v){
+ function bulkMutation(v){
+  const raw=String(v??'').trim();
+  const x=norm(raw)
+    .replace(/[_-]+/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+
+  if(
+    !raw ||
+    ['sin mutacion','ninguna','none','default'].includes(x)
+  ){
+    return '';
+  }
+
+  const map={
+    'fantasma':'Fantasma',
+    'phantom':'Fantasma',
+
+    'crystal':'Crystal',
+    'cristal':'Crystal',
+
+    'cyber':'Cyber',
+    'ciber':'Cyber',
+
+    'rainbow':'Rainbow',
+    'arcoiris':'Rainbow',
+    'arco iris':'Rainbow',
+
+    'divine':'Divine',
+    'divina':'Divine',
+
+    'cursed':'Cursed',
+
+    'radioactive':'Radioactive',
+    'radioactivo':'Radioactive',
+    'radioactiva':'Radioactive',
+
+    'yin yang':'Yin Yang',
+    'yinyang':'Yin Yang',
+
+    'galaxy':'Galaxy',
+    'galaxia':'Galaxy',
+
+    'lava':'Lava',
+
+    'candy':'Candy',
+
+    'bloodrot':'Bloodrot',
+    'blood rot':'Bloodrot',
+
+    'diamond':'Diamond',
+    'diamante':'Diamond',
+
+    'gold':'Gold',
+    'oro':'Gold'
+  };
+
+  return map[x] ?? null;
+ } 
   const x=norm(String(v??'')).trim();
   if(['si','sí','yes','true','1','x','⭐'].includes(x))return true;
   if(['no','false','0'].includes(x))return false;
