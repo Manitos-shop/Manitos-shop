@@ -1176,6 +1176,104 @@ function parseBulkText(txt){
 function applyBulkRow(row,keepEmpty,addMissing){
   const present=row.__present||{};
   const name=String(row.name??'').trim();
+
+  if(!name){
+    return {type:'error',msg:'Fila sin nombre'};
+  }
+
+  let normalizedMutation;
+
+  if(present.mutation){
+    const rawMutation=String(row.mutation??'').trim();
+
+    if(!(keepEmpty && rawMutation==='')){
+      normalizedMutation=bulkMutation(rawMutation);
+
+      if(normalizedMutation===null){
+        return {
+          type:'error',
+          msg:name+' · mutación no válida: '+rawMutation
+        };
+      }
+    }
+  }
+
+  let item=items.find(x=>norm(x.name)===norm(name));
+  let added=false;
+
+  if(!item){
+    if(!addMissing){
+      return {type:'skip',msg:name+' no existe'};
+    }
+
+    item={
+      name,
+      price:'',
+      stock:'por_confirmar',
+      mutation:'',
+      image:'',
+      featured:false,
+      notes:''
+    };
+
+    items.push(item);
+    added=true;
+  }
+
+  const before=JSON.stringify(item);
+
+  const setText=(key)=>{
+    if(!present[key])return;
+
+    const text=String(row[key]??'').trim();
+
+    if(keepEmpty && text==='')return;
+
+    item[key]=text;
+  };
+
+  setText('price');
+
+  if(present.stock){
+    const raw=String(row.stock??'').trim();
+
+    if(!(keepEmpty && raw==='')){
+      const s=bulkStock(raw);
+
+      if(s){
+        item.stock=s;
+      }
+    }
+  }
+
+  if(normalizedMutation!==undefined){
+    item.mutation=normalizedMutation;
+  }
+
+  setText('image');
+  setText('notes');
+
+  if(present.featured){
+    const raw=String(row.featured??'').trim();
+
+    if(!(keepEmpty && raw==='')){
+      const b=bulkBool(raw);
+
+      if(b!==null){
+        item.featured=b;
+      }
+    }
+  }
+
+  const changed=before!==JSON.stringify(item);
+
+  return {
+    type:added ? 'add' : (changed ? 'update' : 'same'),
+    msg:name
+  };
+}
+  const present=row.__present||{};
+  const name=String(row.name??'').trim();
   if(!name)return {type:'error',msg:'Fila sin nombre'};
   let item=items.find(x=>norm(x.name)===norm(name));
   let added=false;
