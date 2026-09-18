@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#120d20">
+<title>Manitos Shop · Catálogo Brainrots V7.10.0</title>
+<style>
+:root{--bg:#090611;--panel:#171027;--panel2:#24173e;--line:#3b2a63;--text:#fff;--muted:#b9add6;--gold:#f6c945;--purple:#9b5cff;--ok:#2bb673;--bad:#d9534f;--warn:#d9a72e;--blue:#3d8bfd}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#08050d,#140d20);color:var(--text)}
+.wrap{max-width:1150px;margin:auto;padding:18px} .hero{text-align:center;padding:24px 8px 12px} .hero h1{margin:0;font-size:34px} .hero h1 span{color:var(--gold)} .hero p{color:var(--muted)}
+.toolbar{position:sticky;top:0;z-index:12;background:rgba(10,7,17,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.search{width:100%;padding:15px 16px;border-radius:14px;border:1px solid var(--line);background:#120d20;color:#fff;font-size:17px;outline:none}
+.filters,.az,.adminbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px} button{cursor:pointer}
+.filters button,.az button,.adminbar button{border:1px solid var(--line);background:var(--panel);color:#fff;border-radius:10px;padding:8px 11px}
+.filters button.active,.az button.active{background:var(--purple);border-color:var(--purple)}
+.syncbar{margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#100b1b;display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.syncbar .state{font-size:13px;color:var(--muted)} .syncbar .state b{color:#fff}
+.summary{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:16px 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.thumb{height:150px;background:linear-gradient(135deg,#21143b,#110b1d);display:flex;align-items:center;justify-content:center;color:#7f70a0;border-bottom:1px solid var(--line)} .thumb img{width:100%;height:100%;object-fit:cover}
+.body{padding:15px} .title-row{display:flex;justify-content:space-between;gap:8px} .title-row h3{margin:0;font-size:18px}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0} .badge{font-size:12px;padding:5px 8px;border-radius:999px;background:#120d20;color:var(--muted);border:1px solid var(--line)}
+.status.disponible{color:var(--ok)} .status.agotado{color:var(--bad)} .status.por_confirmar{color:var(--warn)}
+.price{font-size:23px;font-weight:800;color:var(--gold);margin:8px 0 12px}
+.buy,.copy,.editbtn{width:100%;border-radius:11px;padding:11px;font-weight:700} .buy{border:0;background:var(--gold);color:#171100} .copy,.editbtn{margin-top:8px;border:1px solid var(--line);background:#120d20;color:#fff}
+.adminbox{display:none;margin-top:18px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#120d20} .adminbox.open{display:block}
+.adminbox h3{margin-top:0} .adminbox input,.adminbox select,.adminbox textarea{width:100%;margin:6px 0 10px;padding:11px;border-radius:10px;border:1px solid var(--line);background:#0d0916;color:#fff}
+.adminbox .row{display:grid;grid-template-columns:1fr 1fr;gap:10px} .adminbox .save{background:var(--gold);color:#171100;border:0;border-radius:10px;padding:11px;font-weight:800;width:100%}
+.adminbox .danger{background:#3a1118;color:#ffb9c0;border:1px solid #71303a;border-radius:10px;padding:11px;font-weight:800;width:100%;margin-top:10px}
+.adminbox .newbox{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)} .adminbox .add{background:var(--ok);color:#06170f;border:0;border-radius:10px;padding:11px;font-weight:800;width:100%}
+.adminbox .hint,.small{font-size:12px;color:var(--muted);line-height:1.45}
+.serverbox{margin-top:18px;padding:14px;border:1px dashed var(--line);border-radius:14px;background:#0f0a19} .serverbox h3{margin-top:0}
+.serverbox .serverbtn{width:100%;padding:11px;border-radius:10px;border:1px solid var(--line);background:#151026;color:#fff;font-weight:700;margin-top:8px}
+.serverbox .primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.empty{display:none;text-align:center;padding:40px;color:var(--muted)} .footer{text-align:center;color:var(--muted);padding:24px 0 8px}
+@media(max-width:560px){.adminbox .row{grid-template-columns:1fr}.hero h1{font-size:30px}}
+
+.publishbox{display:none;margin-top:14px;padding:14px;border:1px solid #6c42b7;border-radius:14px;background:#10091d}
+.publishbox.open{display:block}
+.publishbox h3{margin:0 0 8px}
+.publishbox .step{margin:7px 0;padding:8px 10px;border-radius:10px;background:#171023}
+.publishbox .ok{color:#56d68a;font-weight:700}
+.publishbox button{width:100%;margin-top:8px;padding:11px;border-radius:10px;border:1px solid #6c42b7;background:#24163d;color:#fff;font-weight:700}
+.pending{margin-top:8px;font-size:13px;color:#ffd166}
+
+
+.change-summary{margin-top:10px;padding:12px;border:1px solid #5b3a93;border-radius:12px;background:#120b20}
+.change-summary h4{margin:0 0 8px}
+.change-summary ul{margin:0;padding-left:20px}
+.change-summary li{margin:4px 0}
+.pub-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pub-actions button{padding:11px;border-radius:10px;border:1px solid #6c42b7;background:#24163d;color:white;font-weight:700}
+.pub-actions button.primary{background:#6f42c1}
+.copy-ok{margin-top:8px;color:#56d68a;font-weight:700;display:none}
+
+
+/* V6.6: mejoras visuales seguras, sin tocar la lógica */
+.card{
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+.card img{
+  width:100%;
+  max-height:260px;
+  object-fit:cover;
+  display:block;
+  background:#120b20;
+}
+.card h3{
+  font-size:1.35rem;
+  margin-top:14px;
+}
+.card .price{
+  font-size:2rem;
+  line-height:1.1;
+  margin:12px 0 16px;
+}
+.card .actions{
+  display:grid;
+  gap:10px;
+}
+.card button,
+.card a{
+  min-height:48px;
+}
+.badge{
+  font-weight:700;
+}
+.results-head{
+  position:sticky;
+  top:0;
+  z-index:4;
+  backdrop-filter:blur(8px);
+  background:rgba(7,4,12,.86);
+  padding:10px 0;
+}
+@media (min-width:760px){
+  #grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+
+/* V6.6: presentación tipo tienda, sin tocar la lógica */
+.card{
+  border-radius:18px;
+  padding:14px;
+}
+.card img{
+  width:100%;
+  aspect-ratio:1/1;
+  max-height:none;
+  object-fit:contain;
+  padding:10px;
+  box-sizing:border-box;
+  border-radius:14px;
+  background:linear-gradient(180deg,#160d24,#0d0815);
+  border:1px solid rgba(130,88,190,.35);
+}
+.card h3{
+  font-size:1.25rem;
+  margin:12px 0 8px;
+}
+.card .price{
+  font-size:1.85rem;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.card .badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+}
+.card .actions{
+  gap:8px;
+}
+.card .actions > *{
+  border-radius:12px;
+}
+@media (max-width:520px){
+  .card{padding:12px}
+  .card .price{font-size:1.7rem}
+}
+
+
+.image-helper{margin:8px 0 12px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#120b20}
+.image-helper .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.image-helper button{margin:0;min-height:44px}
+.image-preview{margin-top:10px;display:none;width:100%;max-height:220px;object-fit:contain;border-radius:10px;background:#0b0711}
+.image-msg{margin-top:8px;font-size:13px;color:#a998c3}
+@media(max-width:520px){.image-helper .row2{grid-template-columns:1fr}}
+
+/* V6.9 · carga masiva */
+.bulkbox{border-color:#5b3aa6;background:linear-gradient(180deg,#130b20,#0d0716)}
+.bulkbox textarea{min-height:220px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.35}
+.bulkbox .bulk-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.bulkbox .bulk-actions button{margin:0}
+.bulk-source{display:block;margin:12px 0;padding:11px;border:1px solid #6c42b7;border-radius:10px;background:#24163d;color:#fff;text-align:center;text-decoration:none;font-weight:700}
+.bulk-result{margin-top:10px;padding:10px;border-radius:10px;background:#0d0815;color:#cbb9e8;font-size:14px;display:none}
+.bulk-help{font-size:13px;color:#a998c3;line-height:1.45;margin-top:8px}
+@media(max-width:520px){.bulkbox .bulk-actions{grid-template-columns:1fr}}
+
+
+/* V7.9.9 · imágenes base automáticas + especificaciones visibles */
+.auto-ref{
+  padding:6px 10px 2px;
+  font-size:12px;
+  color:#a998c3;
+  text-align:center;
+}
+.specs{
+  margin:10px 0 4px;
+  padding:9px 10px;
+  border:1px solid rgba(130,88,190,.25);
+  border-radius:10px;
+  background:#10091a;
+  color:#d4c6e8;
+  font-size:13px;
+  line-height:1.4;
+}
+
+
+/* V7.9.9 · navegación compacta + mutaciones + Servicios Manitos */
+.toolbar .wrap{padding-top:10px;padding-bottom:9px}
+.topnav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.topnav button,.compact-controls button{
+  border:1px solid var(--line);background:var(--panel);color:#fff;border-radius:11px;
+  min-height:40px;padding:7px 10px;font-weight:800
+}
+.topnav .section-tab.active{background:linear-gradient(135deg,#8d4cf0,#6f42c1);border-color:#9b5cff}
+.search{padding:12px 14px}
+.filters{
+  flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;
+  scrollbar-width:none;padding-bottom:2px;margin-top:8px
+}
+.filters::-webkit-scrollbar,.mutationbar::-webkit-scrollbar,.compact-az::-webkit-scrollbar{display:none}
+.filters button{white-space:nowrap;flex:0 0 auto;padding:7px 10px}
+.mutation-row{display:flex;align-items:center;gap:6px;margin-top:7px;min-width:0}
+.mutation-label{font-size:19px;flex:0 0 auto}
+.mutationbar{
+  display:flex;gap:7px;overflow-x:auto;min-width:0;scrollbar-width:none;padding:1px 0 3px
+}
+.mutationbar button{
+  white-space:nowrap;flex:0 0 auto;border:1px solid var(--line);background:#120d20;color:#fff;
+  border-radius:999px;padding:6px 10px;font-size:13px;font-weight:700
+}
+.mutationbar button.active{background:var(--purple);border-color:var(--purple)}
+.compact-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:7px}
+.compact-az{
+  display:none;flex-wrap:nowrap;overflow-x:auto;gap:7px;margin-top:7px;padding-bottom:2px
+}
+.compact-az.open{display:flex}
+.compact-az button{flex:0 0 auto;min-width:38px;padding:6px 9px}
+.admin-menu{display:none;flex-wrap:nowrap;overflow-x:auto;margin-top:7px;padding-bottom:2px}
+.admin-menu.open{display:flex}
+.admin-menu button{white-space:nowrap;flex:0 0 auto;padding:7px 9px}
+.syncbar{margin-top:7px;padding:7px 9px;min-height:34px}
+.syncbar .state{font-size:11px}
+.hero{padding:10px 8px 4px}
+.hero h1{font-size:27px}
+.hero p{margin:7px 0 4px}
+.summary{margin:9px 0 10px}
+.services-section{display:none;margin:10px 0 4px}
+.services-section.open{display:block}
+.services-head{
+  padding:13px 14px;border:1px solid var(--line);border-radius:16px;
+  background:linear-gradient(135deg,#1c102e,#2a1844);margin-bottom:12px
+}
+.services-head h2{margin:0;color:var(--gold);font-size:23px}
+.services-head p{margin:7px 0 0;color:var(--muted);line-height:1.4}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:11px}
+.service-card{
+  border:1px solid var(--line);border-radius:16px;padding:14px;
+  background:linear-gradient(180deg,var(--panel),var(--panel2))
+}
+.service-icon{font-size:31px}
+.service-card h3{margin:7px 0 6px}
+.service-card p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.4;min-height:36px}
+.service-wa{
+  width:100%;border:0;border-radius:11px;padding:10px;font-weight:800;
+  background:var(--gold);color:#171100
+}
+body.services-view #grid,body.services-view #empty,body.services-view #catalogSummary{display:none!important}
+body.services-view .hero p{display:none}
+body.services-view #servicesSection{display:block}
+@media(max-width:560px){
+  .wrap{padding:10px}
+  .toolbar .wrap{padding:7px 10px 8px}
+  .hero h1{font-size:25px}
+  .hero{padding:8px 3px 2px}
+  .hero p{font-size:13px}
+  .syncbar .state:nth-child(2){display:none}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .service-card{padding:11px}
+  .service-card h3{font-size:15px}
+  .service-card p{font-size:12px}
+}
+@media(max-width:390px){
+  .services-grid{grid-template-columns:1fr}
+}
+
+
+/* V7.9.9 · más espacio útil en móvil */
+.syncbar{display:none}
+.admin-menu.open + .syncbar{display:flex}
+
+/* En Servicios dejamos únicamente las pestañas superiores */
+body.services-view .search,
+body.services-view .filters,
+body.services-view .mutation-row,
+body.services-view .compact-controls,
+body.services-view .compact-az,
+body.services-view .admin-menu,
+body.services-view .syncbar,
+body.services-view .hero,
+body.services-view #catalogSummary{
+  display:none!important;
+}
+body.services-view .toolbar .wrap{
+  padding-top:7px;
+  padding-bottom:7px;
+}
+body.services-view .topnav{margin-bottom:0}
+
+/* Ajuste general para ganar algunos píxeles */
+.topnav button,.compact-controls button{min-height:38px}
+.mutationbar button{padding:5px 9px}
+.filters button{padding:6px 9px}
+.hero{padding-top:7px}
+.summary{margin-top:6px}
+
+/* Servicios: encabezado visible y tarjetas algo más compactas */
+.services-section.open{margin-top:8px}
+.services-head{padding:12px 13px;margin-bottom:10px}
+.services-head h2{font-size:21px}
+.service-card{padding:12px}
+.service-card p{margin-bottom:10px}
+.service-wa{padding:9px}
+
+@media(max-width:560px){
+  body.services-view .wrap{padding-top:7px}
+  .services-grid{gap:9px}
+}
+
+
+/* V7.9.9 · mutaciones + servicios administrables */
+.service-featured{grid-column:1/-1}.service-topline{display:flex;align-items:center;justify-content:space-between;gap:10px}.service-mini{font-size:12px;font-weight:800;color:#d9c7f4}.base-paint-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px;margin-top:10px}.paint-row{border:1px solid var(--line);border-radius:13px;background:#130d20;padding:10px}.paint-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.paint-name{font-weight:900}.status-pill{display:inline-flex;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900;border:1px solid var(--line)}.status-pill.disponible{color:#52df91;background:#0c2418;border-color:#225d40}.status-pill.pendiente{color:#ffd166;background:#2a2109;border-color:#6b5617}.status-pill.espera{color:#d9c7ff;background:#1d1233;border-color:#563991}.paint-meta{font-size:12px;color:var(--muted);margin:7px 0}.paint-row button,.service-dynamic button{width:100%;border:0;border-radius:10px;padding:9px;background:var(--gold);font-weight:800;color:#171100}.services-subgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:11px;grid-column:1/-1}.service-dynamic{border:1px solid var(--line);border-radius:16px;padding:12px;background:linear-gradient(180deg,var(--panel),var(--panel2))}.service-dynamic h3{margin:7px 0 6px}.service-dynamic p{color:var(--muted);font-size:13px;line-height:1.4;min-height:36px}.managebox{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.manage-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:7px 0}.manage-actions button{border:1px solid var(--line);background:#171023;color:#fff;border-radius:10px;padding:9px;font-weight:700}.mutation-admin-list{max-height:250px;overflow:auto;border:1px solid var(--line);border-radius:11px;background:#0d0916;padding:7px;margin:8px 0}.mutation-admin-item{display:flex;align-items:center;gap:8px;padding:7px 5px;border-bottom:1px solid #261b3a;font-size:13px}.mutation-admin-item:last-child{border-bottom:0}.mutation-admin-item input{width:auto!important;margin:0!important}.compact-new{margin-top:12px!important}.service-publish{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+@media(max-width:560px){.base-paint-list,.services-subgrid{grid-template-columns:1fr}.manage-actions{grid-template-columns:1fr}.service-featured{grid-column:auto}}
+
+
+/* V7.9.9 · acceso directo a Administración de Servicios */
+.services-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.services-admin-btn{
+  flex:0 0 auto;
+  border:1px solid #7650b9;
+  background:#211435;
+  color:#fff;
+  border-radius:11px;
+  padding:9px 11px;
+  font-weight:800;
+}
+.service-admin-topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#1a102a;
+}
+.service-admin-topbar button{
+  border:1px solid var(--line);
+  background:#2a1743;
+  color:#fff;
+  border-radius:10px;
+  padding:9px 10px;
+  font-weight:800;
+}
+body.services-admin-mode #servicesSection{display:none!important}
+body.services-admin-mode #adminbox{display:block!important}
+body.services-admin-mode #adminbox > *{display:none!important}
+body.services-admin-mode #adminbox > .service-manage-box{display:block!important}
+body.services-admin-mode #grid,
+body.services-admin-mode #empty,
+body.services-admin-mode #catalogSummary,
+body.services-admin-mode .hero{display:none!important}
+
+@media(max-width:560px){
+  .services-head{display:block}
+  .services-admin-btn{width:100%;margin-top:12px}
+  .service-admin-topbar{display:block}
+  .service-admin-topbar button{width:100%;margin-top:10px}
+}
+
+
+/* V7.9.9 · modo Administración de Servicios realmente independiente */
+body.services-admin-mode .search,
+body.services-admin-mode .filters,
+body.services-admin-mode .mutation-row,
+body.services-admin-mode .compact-controls,
+body.services-admin-mode .compact-az,
+body.services-admin-mode .admin-menu,
+body.services-admin-mode .syncbar{
+  display:none!important;
+}
+body.services-admin-mode .toolbar .wrap{
+  padding-top:7px!important;
+  padding-bottom:7px!important;
+}
+body.services-admin-mode .topnav{
+  margin-bottom:0!important;
+}
+body.services-admin-mode .section-tab[data-view="services"]{
+  background:linear-gradient(135deg,#8d4cf0,#6f42c1)!important;
+  border-color:#9b5cff!important;
+}
+body.services-admin-mode .section-tab[data-view="catalog"]{
+  background:var(--panel)!important;
+  border-color:var(--line)!important;
+}
+
+
+/* V7.9.9 · catálogo visual de Pintadas de Base */
+.paint-visual{
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr);
+  gap:10px;
+  align-items:stretch;
+  padding:9px;
+}
+.paint-thumb{
+  width:112px;
+  height:100%;
+  min-height:105px;
+  max-height:128px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#09060e;
+}
+.paint-content{min-width:0;display:flex;flex-direction:column}
+.paint-content .paint-meta{flex:1}
+.paint-content button{margin-top:auto}
+@media(max-width:430px){
+  .paint-visual{grid-template-columns:96px minmax(0,1fr)}
+  .paint-thumb{width:96px;min-height:100px}
+  .paint-name{font-size:14px}
+}
+
+</style>
+</head>
+<body>
+<div class="toolbar"><div class="wrap">
+<div class="topnav" aria-label="Secciones">
+<button type="button" class="section-tab active" data-view="catalog">🧠 Catálogo</button>
+<button type="button" class="section-tab" data-view="services">👑 Servicios</button>
+</div>
+<input id="search" class="search" placeholder="Buscar Brainrot…">
+<div class="filters">
+<button data-filter="all" class="active">Todos</button><button data-filter="disponible">Disponibles</button><button data-filter="agotado">Agotados</button><button data-filter="por_confirmar">Por confirmar</button><button data-filter="featured">Destacados ⭐</button>
+</div>
+<div class="mutation-row">
+  <span class="mutation-label">🧬</span>
+  <div class="mutationbar" id="mutationBar" aria-label="Filtrar por mutación"></div>
+</div>
+<div class="compact-controls">
+  <button type="button" id="toggleAZ">🔤 A–Z</button>
+  <button type="button" id="toggleAdminMenu">⚙️ Administración</button>
+</div>
+<div class="az compact-az" id="az"></div>
+<div class="adminbar admin-menu" id="adminMenu">
+<button id="toggleAdmin">✏️ Editar catálogo</button>
+<button id="toggleBulk">📚 Carga masiva</button>
+<button id="exportData">📦 Preparar publicación</button>
+<button id="importBtn">⬆️ Importar datos</button>
+<button id="reloadServer">🌐 Actualizar servidor</button>
+</div>
+<div class="syncbar">
+  <div class="state" id="syncState">Fuente: <b>cargando…</b></div>
+  <div class="state">Archivo público: <b>catalogo.json</b></div>
+</div>
+</div></div>
+
+<div class="wrap">
+<section class="hero"><h1>👑 <span>MANITOS</span> SHOP 👑</h1><p>Catálogo Brainrots · versión 7.10.0</p></section>
+<div class="summary" id="catalogSummary"><div><strong id="count">174</strong> resultados</div><div id="filterLabel">Todos</div></div>
+
+<section id="servicesSection" class="services-section" aria-label="Servicios Manitos Shop">
+  <div class="services-head">
+    <div>
+      <h2>👑 Servicios Manitos</h2>
+      <p>Servicios de la comunidad. Toca “Consultar” para preguntar disponibilidad, precio o condiciones.</p>
+    </div>
+    <button type="button" id="openServicesAdmin" class="services-admin-btn">⚙️ Administrar servicios</button>
+  </div>
+  <div class="services-grid" id="servicesGrid">
+    <article class="service-card service-featured">
+      <div class="service-topline"><div class="service-icon">🎨</div><span class="service-mini">Pintadas de Base</span></div>
+      <h3>Colores / mutaciones para tu base</h3>
+      <p>Cada color puede tener su propio estado: Disponible, Pendiente o En espera.</p>
+      <div id="basePaintList" class="base-paint-list"></div>
+    </article>
+    <div id="otherServicesGrid" class="services-subgrid"></div>
+  </div>
+</section>
+
+<div id="bulkbox" class="adminbox bulkbox">
+<h3>📚 Carga masiva · V7.9.9</h3>
+<div class="small">Actualiza muchos Brainrots de una sola vez. Pega una fila por Brainrot con este orden: <b>Nombre | Precio | Estado | Mutación | Imagen | Notas | Destacado</b>. También acepta un arreglo JSON. Los cambios quedan primero en este dispositivo; al final haces una sola publicación de <b>catalogo.json</b>.</div>
+<a class="bulk-source" href="https://rblxguide.com/es/games/steal-a-brainrot/brainrots" target="_blank" rel="noopener">🔎 Abrir índice externo de Brainrots</a>
+<textarea id="bulkInput" rows="10" placeholder="Ejemplo: Nombre | Precio | Estado | Mutación | Imagen | Notas | Destacado"></textarea>
+<label><input type="checkbox" id="bulkKeepExisting" style="width:auto" checked> Si un campo viene vacío, conservar el valor existente</label>
+<label><input type="checkbox" id="bulkAddMissing" style="width:auto"> Agregar Brainrots que todavía no existan</label>
+<div class="bulk-actions">
+  <button type="button" id="bulkExample">🧪 Poner ejemplo</button>
+  <button type="button" class="save" id="bulkApply">✅ Aplicar lote</button>
+</div>
+<div class="bulk-help">Estados aceptados: <b>disponible</b>, <b>agotado</b> o <b>por_confirmar</b>. En “Destacado” puedes usar sí/no, true/false o 1/0. Si solo quieres cambiar precio y estado, basta con escribir: <b>Nombre | Precio | Estado</b>.</div>
+<div id="bulkResult" class="bulk-result"></div>
+</div>
+
+<div id="adminbox" class="adminbox">
+<h3>Editor rápido</h3>
+<div class="small">Edita aquí precio, stock, mutación, imagen y notas. Los cambios primero se guardan en este dispositivo. Cuando termines, usa <b>Preparar publicación</b> para generar el <b>catalogo.json</b> actualizado y seguir la guía.</div>
+<label>Brainrot</label><select id="adminSelect"></select>
+<div class="row">
+  <div><label>Precio MX</label><input id="adminPrice" placeholder="Ej. 150"></div>
+  <div><label>Estado</label><select id="adminStock"><option value="por_confirmar">Por confirmar</option><option value="disponible">Disponible</option><option value="agotado">Agotado</option></select></div>
+</div>
+<label>Mutación</label>
+<select id="adminMutation">
+  <option value="">Sin mutación</option>
+  <option value="Fantasma">Fantasma</option>
+  <option value="Crystal">Crystal</option>
+  <option value="Cyber">Cyber</option>
+  <option value="Rainbow">Rainbow</option>
+  <option value="Divine">Divine</option>
+  <option value="Cursed">Cursed</option>
+  <option value="Radioactive">Radioactive</option>
+  <option value="Yin Yang">Yin Yang</option>
+  <option value="Galaxy">Galaxy</option>
+  <option value="Lava">Lava</option>
+  <option value="Candy">Candy</option>
+  <option value="Bloodrot">Bloodrot</option>
+  <option value="Diamond">Diamond</option>
+  <option value="Gold">Gold</option>
+</select>
+<label>URL o ruta de imagen</label><input id="adminImage" placeholder="Ej. images/archivo.webp">
+<div class="image-helper">
+  <div class="hint">Puedes dejar este campo vacío: <b>V7.9.9 buscará una imagen base del índice automáticamente</b>. Una URL o ruta propia tendrá prioridad si la agregas después.</div>
+  <div class="row2">
+    <button type="button" id="imageFromFile">📁 Usar nombre de archivo</button>
+    <button type="button" id="testImage">👁️ Probar imagen</button>
+  </div>
+  <img id="adminImagePreview" class="image-preview" alt="Vista previa">
+  <div id="adminImageMsg" class="image-msg">Sin vista previa.</div>
+</div>
+<label>Notas</label><textarea id="adminNotes" rows="2" placeholder="Información adicional"></textarea>
+<label><input type="checkbox" id="adminFeatured" style="width:auto"> Destacado ⭐</label>
+<button class="save" id="saveItem">Guardar cambios</button>
+<button class="danger" id="deleteItem">🗑️ Eliminar este Brainrot</button>
+
+<div class="managebox">
+<h3>🧬 Administración de Mutaciones</h3>
+<div class="hint">Selecciona varios Brainrots y aplica o quita una mutación en un solo paso. La barra superior se actualiza automáticamente.</div>
+<label>Buscar</label><input id="mutationSearchAdmin" placeholder="Ej. 1x1x1x1">
+<div class="manage-actions"><button type="button" id="mutationSelectVisible">☑️ Seleccionar visibles</button><button type="button" id="mutationClearSelection">✖️ Limpiar</button></div>
+<div id="mutationBulkList" class="mutation-admin-list"></div>
+<div id="mutationSelectedCount" class="hint">0 seleccionados</div>
+<label>Mutación</label>
+<select id="mutationBulkValue">
+  <option value="">Seleccionar mutación</option>
+  <option value="Fantasma">Fantasma</option>
+  <option value="Crystal">Crystal</option>
+  <option value="Cyber">Cyber</option>
+  <option value="Rainbow">Rainbow</option>
+  <option value="Divine">Divine</option>
+  <option value="Cursed">Cursed</option>
+  <option value="Radioactive">Radioactive</option>
+  <option value="Yin Yang">Yin Yang</option>
+  <option value="Galaxy">Galaxy</option>
+  <option value="Lava">Lava</option>
+  <option value="Candy">Candy</option>
+  <option value="Bloodrot">Bloodrot</option>
+  <option value="Diamond">Diamond</option>
+  <option value="Gold">Gold</option>
+</select>
+
+<datalist id="mutationOptions" style="display:none"></datalist>
+<div class="manage-actions"><button type="button" class="save" id="mutationApplyBulk">✅ Aplicar</button><button type="button" class="danger" id="mutationRemoveBulk">🧹 Quitar mutación</button></div>
+</div>
+
+<div class="service-manage-box service-admin-topbar">
+  <div>
+    <strong>⚙️ Administración de Servicios</strong>
+    <div class="hint">Edita Pintadas de Base y los demás servicios sin entrar al editor de Brainrots.</div>
+  </div>
+  <button type="button" id="closeServicesAdmin">← Volver a Servicios</button>
+</div>
+
+<div class="managebox service-manage-box" id="paintAdminBlock">
+<h3>🎨 Pintadas de Base</h3>
+<div class="hint">Estas opciones son independientes de los Brainrots. Aquí administras los colores de base, estado, precio y nota.</div>
+<label>Pintada / color</label><select id="paintSelect"></select>
+<label>Nombre</label><input id="paintName" placeholder="Ej. Fantasma">
+<div class="row"><div><label>Estado</label><select id="paintStatus"><option value="disponible">Disponible</option><option value="pendiente">Pendiente</option><option value="espera">En espera</option></select></div><div><label>Precio MX (opcional)</label><input id="paintPrice" placeholder="Ej. 200"></div></div>
+<label>Nota</label><input id="paintNote" placeholder="Ej. Requiere acceso a cuenta">
+<label>Imagen / ruta</label><input id="paintImage" placeholder="Ej. images/pintadas/base-oro.jpg">
+<div class="hint">La imagen puede ser una ruta del repositorio o una URL pública.</div>
+<button type="button" class="save" id="paintSave">Guardar pintada</button>
+<button type="button" class="danger" id="paintDelete">Eliminar pintada</button>
+<div class="newbox compact-new"><h3>➕ Agregar color</h3><label>Nombre</label><input id="paintNewName" placeholder="Ej. Crystal"><button type="button" class="add" id="paintAdd">Agregar</button></div>
+</div>
+
+<div class="managebox service-manage-box" id="serviceStatusAdminBlock">
+<h3>👑 Estados de Servicios</h3>
+<label>Servicio</label><select id="serviceSelect"></select>
+<div class="row"><div><label>Estado</label><select id="serviceStatus"><option value="disponible">Disponible</option><option value="pendiente">Pendiente</option><option value="espera">En espera</option></select></div><div><label>Precio / texto (opcional)</label><input id="servicePrice" placeholder="Ej. Por pedido"></div></div>
+<label>Descripción</label><textarea id="serviceDescription" rows="2"></textarea>
+<button type="button" class="save" id="serviceSave">Guardar servicio</button>
+<div class="service-publish"><button type="button" class="serverbtn primary" id="exportServices">⬇️ Descargar servicios.json</button><button type="button" class="serverbtn" id="reloadServices">🌐 Recargar servicios del servidor</button><div id="serviceSource" class="hint">Servicios: cargando…</div></div>
+</div>
+
+<div class="newbox">
+<h3>➕ Agregar Brainrot</h3>
+<div class="hint">Se agregará automáticamente en orden alfabético.</div>
+<label>Nombre nuevo</label><input id="newName" placeholder="Ej. Nuevo Brainrot">
+<div class="row">
+  <div><label>Precio MX</label><input id="newPrice" placeholder="Ej. 150"></div>
+  <div><label>Estado</label><select id="newStock"><option value="por_confirmar">Por confirmar</option><option value="disponible">Disponible</option><option value="agotado">Agotado</option></select></div>
+</div>
+<label>Mutación</label>
+<select id="newMutation">
+  <option value="">Sin mutación</option>
+  <option value="Fantasma">Fantasma</option>
+  <option value="Crystal">Crystal</option>
+  <option value="Cyber">Cyber</option>
+  <option value="Rainbow">Rainbow</option>
+  <option value="Divine">Divine</option>
+  <option value="Cursed">Cursed</option>
+  <option value="Radioactive">Radioactive</option>
+  <option value="Yin Yang">Yin Yang</option>
+  <option value="Galaxy">Galaxy</option>
+  <option value="Lava">Lava</option>
+  <option value="Candy">Candy</option>
+  <option value="Bloodrot">Bloodrot</option>
+  <option value="Diamond">Diamond</option>
+  <option value="Gold">Gold</option>
+</select>
+<label>URL de imagen</label><input id="newImage" placeholder="https://...">
+<label>Notas</label><textarea id="newNotes" rows="2" placeholder="Información adicional"></textarea>
+<label><input type="checkbox" id="newFeatured" style="width:auto"> Destacado ⭐</label>
+<button class="add" id="addItem">Agregar al catálogo</button>
+</div>
+
+<div class="serverbox">
+<h3>🌐 Publicación global</h3>
+<div class="small">Esta versión separa el diseño de los datos. En adelante, para actualizar precios/stock para todos, basta con reemplazar <b>catalogo.json</b> en GitHub; ya no necesitas cambiar todo el index.html.</div>
+<button class="serverbtn primary" id="exportData2">📦 Abrir publicación guiada</button>
+<input type="file" id="importFile" accept=".json,application/json" style="display:none">
+<button class="serverbtn" id="importData2">Importar catalogo.json</button>
+</div>
+
+<div class="publishbox" id="publishBox">
+  <h3>📦 Publicación guiada · V6.9</h3>
+  <div class="pending">Tus cambios locales no se pierden al abrir esta guía.</div>
+  <div class="step">1. Pulsa <b>⬇️ Descargar JSON</b> para crear el catalogo.json actualizado.</div>
+  <div class="step">2. En GitHub abre el archivo <b>catalogo.json</b> original.</div>
+  <div class="step">3. Reemplaza el contenido con el archivo nuevo o súbelo como reemplazo.</div>
+  <div class="step">4. Haz <b>Commit directly to main</b>.</div>
+  <div class="step">5. Regresa aquí y toca <b>🌐 Actualizar desde servidor</b>.</div>
+  <div class="pending">Consejo: si Android lo renombra como “catalogo (2).json”, no borres el original.</div>
+
+  <div class="change-summary">
+    <h4>🧾 Cambios pendientes</h4>
+    <div id="changeCount">Sin cambios detectados.</div>
+    <ul id="changeList"></ul>
+  </div>
+
+  <div class="pub-actions">
+    <button class="primary" id="downloadJsonNow">⬇️ Descargar JSON</button>
+    <button id="copyJson">📋 Copiar JSON completo</button>
+    <button id="openCatalogGithub">🛠️ Abrir catalogo.json</button>
+    <a href="https://github.com/Manitos-shop/Manitos-shop/edit/main/catalogo.json" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;padding:11px;border-radius:10px;border:1px solid #6c42b7;background:#24163d;color:#fff;font-weight:700">🛠️ Abrir catalogo.json en GitHub</a>
+    <button id="openRepo">📁 Abrir repositorio</button>
+  </div>
+  <div class="copy-ok" id="copyOk">✅ JSON copiado al portapapeles</div>
+  <button id="closePublish">Cerrar guía</button>
+</div>
+</div>
+
+<div id="grid" class="grid"></div><div id="empty" class="empty">No encontré coincidencias.</div>
+<div class="footer">Manitos Shop · V7.10.0 · Admin Keren🍓 · Imágenes base de referencia: RBLXGUIDE/Fandom</div>
+</div>
+
+<script>
+const PHONE="528127647521";
+const STORAGE_KEY='manitos_catalog_v3';
+const SERVICES_STORAGE_KEY='manitos_services_v799';
+const SERVICES_URL='servicios.json';
+const BASE_ITEMS=[{"name": "1x1x1x1", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "4 Hermanos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "67", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Acuanauta", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Aguacate de Pipi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Alessio", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ananassini de Orangutin", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Appellini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Aquarino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Arcadopus", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Asesino de cacao", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Avocadini Antilopini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bailarín Lolololo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ballerina Cappuccina", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ballerina de menta", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bambu Bambu Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bandido Bananero", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bandido Bobritto", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Barcoito Auratito", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Berryno", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bicicleta de Chicleto", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bisonte Gluppitere", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Blueberrinni Octopusini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bola de Octópodo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bola de Peluche", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bombardeo de Svinina", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bombardero Vaccariro", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bombardini Tortinii", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bombardiro Cocodrilo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bombombini Gusini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Boneca Ambalabu", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Brainini de Carrotini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Brasilini Berimbini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Brr Brr Patapim", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bucketoro", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bufalino Bomboberrino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Bulbito Bandido Traktorito", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Burbaloni Loliloli", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Caballo Virtuoso", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cacasito Satallito", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cachorro Melonito", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cangrejita Limoneta", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Capitán Cullini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Carlino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cerdito de Dinero y Dinero", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Chachechi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Chicleteira Surfsiteira", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Chico Sigma", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Chihuanini Taconini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Chimpanzini Bananini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cocinero Crabracadabra", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Coco y Mango", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cocodrilo de Quesadillas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Cocoteddy", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Colegio Esok", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Crostini Infantili", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Delfinita de Plátano", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Dinosaurio Nuclear", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "DJ Panda", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Dul Dul Dul", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Elefante de Cocofanto", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Espaguetis Tualetti", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Espíritu de Granchiello", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Explosión de Horegini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Flippo Marino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Frullato Framingo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Gatito Tacoto", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Gattatino Nyanino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Girafini Raftini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Gkrini Espiaderini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Golazo de Hipopótamo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Gralipuss Medussi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Guerrero Digital", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Hamburguesa de Cangrejo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Helado de Sundrillo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Hipopótamo Cactal", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Indisciplinado Indisciplinado", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Inodoro Focaccino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ir Ir Ir a Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Jirafa Celestial", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Karkerkar Kurkur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ketchuru y Musturu", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ketupat Rápido", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Krupuk por la mañana", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "La Cucaracha", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "La Gran Combinación", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "La Vacca Saturno Saturnita", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ladrillo de sandía de Gorilo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Chicoteiras", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Cucarachas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Frutas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Quesadillas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Tralalertitas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Las Vaquitas Saturnitas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Lavadorito Espinoso", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Lemonita Splashita", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Lirilì Larilà", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Bombinitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Burritos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Chihuaninis", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Combinados", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Cornis", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Crocodilitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Gatitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Jobcitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Orcalitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Sigmas", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tacos de Tipi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tangcitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tictacs", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tortus", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tralaleritos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Los Tungtungtungcitos", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Lumaca Malefica", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Lumacho de Helado", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Mamá de Cocosini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Máquina de Pickone", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Mariachi Corazones", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Matteo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Odin, Din, Din, Din", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Orcalero Orcala", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Orcalita Orcala", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pakrahmatmamat", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pakrahmatmatina", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pandaccini Bananini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Perochello Lemonchello", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pingüino Cocosino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pingüino Salamino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pipi Corni", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pipi Kiwi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Pizzanini de Noobini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Punto de calor de la Olla", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Queso Tim", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Robo Grafito", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Rocketini Frostini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Rollo de Wombo", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Sammyni Spyderini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Sandía Pi Pi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Sombrero de Topolino", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Spioniro Golubiro", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Squalanana", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Strawberrita", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Sushi Inu", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ta Ta Ta Ta Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tablero de Peces", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Taco de Capi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Taco de Tipi Top", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Talpa de Fero", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tang Tang Keletang", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Te Te Te Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tentáculo Técnico", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ti Ti Ti Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tictac Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tigrilini Watermelini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tigroligre Frutonni", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Torrtuginni Dragonfrutini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tortuga Cisterna", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tortuginni Sandcastlini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tostador de Rinocerontes", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Trabajo Trabajo Trabajo Sahur", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tracoducutulu Delapeladustuz", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tractoro Dinosaurio", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tralala Zombie", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tralalero Extinto", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tralalero Tralala", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tralalita Tralala", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Trenostruzzo Turbo 3000", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Tric Trac Baraboom", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Trippi Troppi", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Trippi, Trippi, Trippi, Trippa", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Trullimero Trullicina", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Urubini Flamenguini", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Var Var Var", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}, {"name": "Ventoliero Pavonero", "price": "", "stock": "por_confirmar", "mutation": "", "image": "", "featured": false, "notes": ""}];
+let items=[];let baselineItems=[];
+let currentFilter='all',currentLetter='Todos',currentMutation='Todas';
+
+const grid=document.getElementById('grid'),search=document.getElementById('search'),count=document.getElementById('count'),empty=document.getElementById('empty'),az=document.getElementById('az'),filterLabel=document.getElementById('filterLabel'),syncState=document.getElementById('syncState');
+const filterButtons=[...document.querySelectorAll('.filters button')];
+
+function clone(x){return JSON.parse(JSON.stringify(x))}
+function norm(s){return(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function sortItems(){items.sort((a,b)=>a.name.localeCompare(b.name,'es',{sensitivity:'base'}))}
+
+// V7.9.9 · imágenes base automáticas desde el índice RBLXGUIDE.
+// No necesitas descargar ni subir las imágenes una por una.
+// Una imagen personalizada del catalogo.json siempre tiene prioridad.
+const AUTO_IMAGE_ALIASES={
+  '4 Hermanos':'4th-bros',
+  'Acuanauta':'aquanaut',
+  'Aguacate de Pipi':'pipi-avocado',
+  'Ananassini de Orangutin':'orangutini-ananassini',
+  'Appellini':'appelini',
+  'Asesino de cacao':'cocoa-assassino',
+  'Bailarín Lolololo':'ballerino-lololo',
+  'Ballerina de menta':'ballerina-peppermintina',
+  'Bandido Bananero':'bananito-bandito',
+  'Bandido Bobritto':'bandito-bobritto',
+  'Barcoito Auratito':'boatito-auratito',
+  'Bicicleta de Chicleto':'chicleteira-bicicleteira',
+  'Bisonte Gluppitere':'bisonte-giuppitere',
+  'Bola de Octópodo':'octoball',
+  'Bola de Peluche':'puffaball',
+  'Bombardeo de Svinina':'svinina-bombardino',
+  'Bombardero Vaccariro':'bombardiro-vaccariro',
+  'Bombardiro Cocodrilo':'bombardiro-crocodilo',
+  'Brainini de Carrotini':'carrotini-brainini',
+  'Bufalino Bomboberrino':'bufalino-boomberino',
+  'Bulbito Bandido Traktorito':'bulbito-bandito-traktorito',
+  'Caballo Virtuoso':'cavallo-virtuoso',
+  'Cacasito Satallito':'cacasito-satalito',
+  'Cachorro Melonito':'cachorrito-melonito',
+  'Cangrejita Limoneta':'crabbo-limonetta',
+  'Capitán Cullini':'capitano-gullini',
+  'Chicleteira Surfsiteira':'chicleteira-surfeiteira',
+  'Chico Sigma':'sigma-boy',
+  'Cocinero Crabracadabra':'chef-crabracadabra',
+  'Coco y Mango':'coco-and-mango',
+  'Cocodrilo de Quesadillas':'quesadilla-crocodila',
+  'Colegio Esok':'esok-sekolah',
+  'Crostini Infantili':'bambini-crostini',
+  'Delfinita de Plátano':'bananita-dolphinita',
+  'Dinosaurio Nuclear':'nuclearo-dinossauro',
+  'Elefante de Cocofanto':'cocofanto-elefanto',
+  'Espaguetis Tualetti':'spaghetti-tualetti',
+  'Espíritu de Granchiello':'granchiello-spiritell',
+  'Explosión de Horegini':'horegini-boom',
+  'Gatito Tacoto':'gattito-tacoto',
+  'Golazo de Hipopótamo':'hippo-golazo',
+  'Gralipuss Medussi':'graipuss-medussi',
+  'Guerrero Digital':'guerriro-digitale',
+  'Hamburguesa de Cangrejo':'craburger',
+  'Helado de Sundrillo':'sundrilla-sundae',
+  'Hipopótamo Cactal':'cacto-hipopotamo',
+  'Indisciplinado Indisciplinado':'naughty-naughty',
+  'Inodoro Focaccino':'toiletto-focaccino',
+  'Jirafa Celestial':'girafa-celestre',
+  'Ketchuru y Musturu':'ketchuru-and-musturu',
+  'Ketupat Rápido':'ketupat-kepat',
+  'Krupuk por la mañana':'krupuk-pagi-pagi',
+  'La Gran Combinación':'la-grande-combinasion',
+  'Ladrillo de sandía de Gorilo':'gorillo-watermelondrillo',
+  'Las Cucarachas':'los-cucarachas',
+  'Las Frutas':'los-fruits',
+  'Las Quesadillas':'los-quesadillas',
+  'Las Tralalertitas':'las-tralaleritas',
+  'Lavadorito Espinoso':'lavadorito-spinito',
+  'Los Combinados':'los-combinasionas',
+  'Los Crocodilitos':'los-crocodillitos',
+  'Los Gatitos':'los-gattitos',
+  'Los Tacos de Tipi':'los-tipi-tacos',
+  'Lumacho de Helado':'gelato-lumacho',
+  'Mamá de Cocosini':'cocosini-mama',
+  'Mariachi Corazones':'mariachi-corazoni',
+  'Odin, Din, Din, Din':'odin-din-din-dun',
+  'Pingüino Cocosino':'penguino-cocosino',
+  'Pingüino Salamino':'salamino-penguino',
+  'Pizzanini de Noobini':'noobini-pizzanini',
+  'Punto de calor de la Olla':'pot-hotspot',
+  'Queso Tim':'tim-cheese',
+  'Rollo de Wombo':'wombo-rollo',
+  'Sandía Pi Pi':'pi-pi-watermelon',
+  'Sombrero de Topolino':'ombrello-topolino',
+  'Tablero de Peces':'fishboard',
+  'Taco de Capi':'capi-taco',
+  'Taco de Tipi Top':'tipi-topi-taco',
+  'Talpa de Fero':'talpa-di-fero',
+  'Tentáculo Técnico':'tentacolo-tecnico',
+  'Tortuga Cisterna':'tartaruga-cisterna',
+  'Tostador de Rinocerontes':'rhino-toasterino',
+  'Trabajo Trabajo Trabajo Sahur':'job-job-job-sahur',
+  'Tracoducutulu Delapeladustuz':'tracoducotulu-delapeladustuz',
+  'Tractoro Dinosaurio':'tractoro-dinosauro',
+  'Tralala Zombie':'zombie-tralala',
+  'Tralalero Extinto':'extinct-tralalero',
+  'Trippi, Trippi, Trippi, Trippa':'trippi-troppi-troppa-trippa',
+  'Trullimero Trullicina':'trulimero-trulicina'
+};
+const RBLX_IMG_BASE='https://tgaylapgankrdavwpebz.supabase.co/storage/v1/object/public/game-images/brainrots/';
+function autoSlug(name){
+  if(AUTO_IMAGE_ALIASES[name]) return AUTO_IMAGE_ALIASES[name];
+  return String(name||'')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase()
+    .replace(/&/g,' and ')
+    .replace(/[’']/g,'')
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/^-+|-+$/g,'');
+}
+function directIndexImage(name,ext='webp'){return RBLX_IMG_BASE+autoSlug(name)+'.'+ext}
+function proxyIndexImage(url){
+  return 'https://rblxguide.com/_next/image?url='+encodeURIComponent(url)+'&w=640&q=75';
+}
+function autoImageCandidates(name){
+  const exts=['webp','png','jpg','jpeg'];
+  const direct=exts.map(ext=>directIndexImage(name,ext));
+  const proxied=direct.map(url=>proxyIndexImage(url));
+  // Primero probamos los archivos directos del índice; después sus versiones proxy.
+  return [...direct,...proxied];
+}
+function autoImageUrl(name){return autoImageCandidates(name)[0]}
+function setAutoImage(img,name,startIndex=0){
+  const urls=autoImageCandidates(name);
+  let k=startIndex;
+  img.onerror=()=>{
+    k++;
+    if(k<urls.length){img.src=urls[k];return;}
+    img.onerror=null;
+    const thumb=img.closest('.thumb');
+    if(thumb) thumb.innerHTML='<div style="padding:48px 12px;text-align:center;color:#b59ad4"><div style="font-size:34px;margin-bottom:8px">🧠</div><b>'+name+'</b><br><span style="font-size:12px">Imagen base no encontrada en los formatos probados</span></div>';
+  };
+  img.src=urls[k];
+}
+
+function statusText(s){return s==='disponible'?'Disponible':s==='agotado'?'Agotado':'Por confirmar'}
+function persistLocal(){sortItems();localStorage.setItem(STORAGE_KEY,JSON.stringify(items));syncState.innerHTML='Fuente: <b>cambios locales</b> · <span style="color:#ffd166">pendientes de publicar</span>';refreshChangeSummary()}
+function filtered(){const q=norm(search.value.trim());return items.filter(i=>{const a=norm(i.name).includes(q);const b=currentLetter==='Todos'||norm(i.name).startsWith(currentLetter.toLowerCase());const c=currentFilter==='all'||(currentFilter==='featured'&&i.featured)||i.stock===currentFilter;const im=norm(i.mutation||'');const d=currentMutation==='Todas'||(currentMutation==='Sin mutación'?(im===''||im==='default'||im==='sin mutacion'):im===norm(currentMutation));return a&&b&&c&&d})}
+function wa(i){const p=i.price?` Precio: ${i.price} MX.`:'';const m=i.mutation?` Mutación: ${i.mutation}.`:'';const msg=`Hola Admin Keren🍓, vengo del catálogo de Manitos Shop. Me interesa: ${i.name}.${p}${m} ¿Está disponible?`;window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,'_blank')}
+function render(){
+  const list=filtered();
+  grid.innerHTML='';
+  count.textContent=list.length;
+  empty.style.display=list.length?'none':'block';
+
+  list.forEach(i=>{
+    const c=document.createElement('article');
+    c.className='card';
+
+    const custom=String(i.image||'').trim();
+    const refLabel=custom?'':`<div class="auto-ref">Imagen base automática de referencia${i.mutation?' · la mutación se indica abajo':''}</div>`;
+    const media=`<div class="thumb"><img alt="${i.name}">${refLabel}</div>`;
+    const mutationText=i.mutation?`Mutación: ${i.mutation}`:'Mutación: —';
+    const specs=i.notes?`<div class="specs">${i.notes}</div>`:'';
+
+    c.innerHTML=`${media}<div class="body"><div class="title-row"><h3>${i.name}</h3><span>${i.featured?'⭐':''}</span></div><div class="badges"><span class="badge status ${i.stock}">${statusText(i.stock)}</span><span class="badge">${mutationText}</span></div>${specs}<div class="price">${i.price?'$'+i.price+' MX':'Precio por definir'}</div><button class="buy">Preguntar por WhatsApp</button><button class="copy">Copiar nombre</button><button class="editbtn">Editar este</button></div>`;
+
+    const img=c.querySelector('img');
+    if(custom){
+      let moved=false;
+      img.onerror=()=>{
+        if(moved)return;
+        moved=true;
+        const thumb=c.querySelector('.thumb');
+        if(thumb && !thumb.querySelector('.auto-ref')) thumb.insertAdjacentHTML('beforeend',`<div class="auto-ref">Imagen base automática de referencia${i.mutation?' · la mutación se indica abajo':''}</div>`);
+        setAutoImage(img,i.name,0);
+      };
+      img.src=custom;
+    }else{
+      setAutoImage(img,i.name,0);
+    }
+
+    c.querySelector('.buy').onclick=()=>wa(i);
+    c.querySelector('.copy').onclick=()=>navigator.clipboard?.writeText(i.name);
+    c.querySelector('.editbtn').onclick=()=>openEditor(i.name);
+    grid.appendChild(c);
+  });
+}
+
+filterButtons.forEach(b=>b.onclick=()=>{filterButtons.forEach(x=>x.classList.remove('active'));b.classList.add('active');currentFilter=b.dataset.filter;filterLabel.textContent=b.textContent+(currentMutation==='Todas'?'':' · '+currentMutation);render()});
+['Todos',...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].forEach(l=>{const b=document.createElement('button');b.textContent=l;if(l==='Todos')b.classList.add('active');b.onclick=()=>{[...az.children].forEach(x=>x.classList.remove('active'));b.classList.add('active');currentLetter=l;render()};az.appendChild(b)});
+// V7.9.9 · barra fija de mutaciones
+const mutationBar=document.getElementById('mutationBar');
+
+const MUTATIONS=[
+  'Todas',
+  'Fantasma',
+  'Crystal',
+  'Cyber',
+  'Rainbow',
+  'Divine',
+  'Cursed',
+  'Radioactive',
+  'Yin Yang',
+  'Galaxy',
+  'Lava',
+  'Candy',
+  'Bloodrot',
+  'Diamond',
+  'Gold',
+  'Sin mutación'
+];
+
+function refreshMutationBar(){
+  if(!MUTATIONS.some(v=>norm(v)===norm(currentMutation))){
+    currentMutation='Todas';
+  }
+
+  mutationBar.innerHTML='';
+
+  MUTATIONS.forEach(m=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.textContent=m;
+    b.dataset.mutation=m;
+
+    if(norm(m)===norm(currentMutation)){
+      b.classList.add('active');
+    }
+
+    b.onclick=()=>{
+      [...mutationBar.children].forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      currentMutation=m;
+
+      filterLabel.textContent=
+        (currentFilter==='all'
+          ? 'Todos'
+          : document.querySelector('.filters button.active')?.textContent || 'Todos')
+        +(m==='Todas'?'':' · '+m);
+
+      render();
+    };
+
+    mutationBar.appendChild(b);
+  });
+}
+
+// V7.9.9 · controles compactos
+document.getElementById('toggleAZ').onclick=()=>document.getElementById('az').classList.toggle('open');
+document.getElementById('toggleAdminMenu').onclick=()=>document.getElementById('adminMenu').classList.toggle('open');
+
+// V7.9.9 · Catálogo / Servicios
+function resetHorizontalBars(){
+  const filters=document.querySelector('.filters');
+  const mutations=document.getElementById('mutationBar');
+  const azbar=document.getElementById('az');
+  if(filters) filters.scrollLeft=0;
+  if(mutations) mutations.scrollLeft=0;
+  if(azbar) azbar.scrollLeft=0;
+}
+function setMainView(view){
+  const services=view==='services';
+  document.body.classList.remove('services-admin-mode');
+  document.body.classList.toggle('services-view',services);
+  document.getElementById('servicesSection').classList.toggle('open',services);
+  document.querySelectorAll('.section-tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+  document.getElementById('adminbox').classList.remove('open');
+  document.getElementById('bulkbox').classList.remove('open');
+  document.getElementById('publishBox').classList.remove('open');
+  document.getElementById('adminMenu').classList.remove('open');
+  document.getElementById('az').classList.remove('open');
+  resetHorizontalBars();
+  if(services){
+    window.scrollTo({top:0,behavior:'smooth'});
+  }else{
+    render();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+document.querySelectorAll('.section-tab').forEach(b=>b.onclick=()=>setMainView(b.dataset.view));
+setTimeout(resetHorizontalBars,0);
+
+function openServicesAdminPanel(){
+  document.body.classList.add('services-view','services-admin-mode');
+
+  document.querySelectorAll('.section-tab').forEach(b=>{
+    b.classList.toggle('active',b.dataset.view==='services');
+  });
+
+  document.getElementById('servicesSection').classList.remove('open');
+  document.getElementById('adminbox').classList.add('open');
+  document.getElementById('bulkbox').classList.remove('open');
+  document.getElementById('publishBox').classList.remove('open');
+  document.getElementById('adminMenu').classList.remove('open');
+  document.getElementById('az').classList.remove('open');
+
+  resetHorizontalBars();
+  refreshServiceAdmin();
+
+  setTimeout(()=>{
+    window.scrollTo({top:0,behavior:'instant'});
+    document.getElementById('paintAdminBlock')?.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+}
+
+function closeServicesAdminPanel(){
+  document.body.classList.remove('services-admin-mode');
+  document.body.classList.add('services-view');
+
+  document.querySelectorAll('.section-tab').forEach(b=>{
+    b.classList.toggle('active',b.dataset.view==='services');
+  });
+
+  document.getElementById('adminbox').classList.remove('open');
+  document.getElementById('servicesSection').classList.add('open');
+  setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),40);
+}
+
+document.getElementById('openServicesAdmin').onclick=openServicesAdminPanel;
+document.getElementById('closeServicesAdmin').onclick=closeServicesAdminPanel;
+
+const DEFAULT_SERVICES={"paints":[{"name":"Fantasma","status":"disponible","price":"","note":"","image":""},{"name":"Oro","status":"pendiente","price":"","note":"","image":"images/pintadas/base-oro.jpg"},{"name":"Rainbow","status":"pendiente","price":"","note":"","image":"images/pintadas/base-rainbow.jpg"},{"name":"Candy","status":"pendiente","price":"","note":"","image":"images/pintadas/base-candy.webp"},{"name":"Lava","status":"pendiente","price":"","note":"","image":"images/pintadas/base-lava.webp"},{"name":"Galaxy","status":"pendiente","price":"","note":"","image":"images/pintadas/base-galaxy.webp"},{"name":"Yin Yang","status":"pendiente","price":"","note":"","image":"images/pintadas/base-yin-yang.jpg"},{"name":"Radiactivo","status":"pendiente","price":"","note":"","image":"images/pintadas/base-radiactivo.webp"},{"name":"Cursed","status":"pendiente","price":"","note":"","image":"images/pintadas/base-cursed.webp"},{"name":"Divina","status":"pendiente","price":"","note":"","image":"images/pintadas/base-divina.jpg"},{"name":"Ciber","status":"pendiente","price":"","note":"","image":"images/pintadas/base-ciber.png"}],"services":[{"id":"robux","icon":"💎","name":"Robux y Gamepasses","status":"pendiente","price":"Por pedido","description":"Productos por pedido y gamepasses de juegos disponibles."},{"id":"subastas","icon":"🔨","name":"Subastas Manitos","status":"pendiente","price":"","description":"Consulta las subastas activas y cómo participar."},{"id":"busqueda","icon":"🔎","name":"Búsqueda de Brainrots","status":"pendiente","price":"","description":"Ayuda para localizar Brainrots específicos dentro de la comunidad."},{"id":"trade","icon":"🔄","name":"Compra / Venta / Trade","status":"pendiente","price":"","description":"Consulta operaciones disponibles y condiciones de entrega."}]};
+let servicesData=JSON.parse(JSON.stringify(DEFAULT_SERVICES));
+function serviceStatusText(s){return s==='disponible'?'Disponible':s==='espera'?'En espera':'Pendiente'}
+function serviceWA(subject,status,extra=''){const msg=`Hola Admin Keren🍓, vengo de Servicios de Manitos Shop. Me interesa: ${subject}. Estado: ${serviceStatusText(status)}.${extra?` ${extra}`:''} ¿Me das más información y disponibilidad?`;window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,'_blank')}
+function persistServices(){localStorage.setItem(SERVICES_STORAGE_KEY,JSON.stringify(servicesData));const s=document.getElementById('serviceSource');if(s)s.textContent='Servicios: cambios locales pendientes de publicar'}
+function renderServices(){
+  const paints=document.getElementById('basePaintList'); if(paints){paints.innerHTML='';(servicesData.paints||[]).forEach(p=>{const row=document.createElement('div');row.className='paint-row paint-visual';const img=p.image?`<img class="paint-thumb" src="${p.image}" alt="Base ${p.name}" loading="lazy" onerror="this.style.display='none'">`:'';row.innerHTML=`${img}<div class="paint-content"><div class="paint-head"><span class="paint-name">${p.name}</span><span class="status-pill ${p.status}">${serviceStatusText(p.status)}</span></div><div class="paint-meta">${p.price?`$${p.price} MX · `:''}${p.note||'Más información por WhatsApp'}</div><button type="button">💬 Más info por WhatsApp</button></div>`;row.querySelector('button').onclick=()=>serviceWA(`Pintada de Base: ${p.name}`,p.status,p.price?`Precio mostrado: $${p.price} MX.`:'');paints.appendChild(row)});if(!(servicesData.paints||[]).length)paints.innerHTML='<div class="hint">Aún no hay pintadas configuradas.</div>'}
+  const grid=document.getElementById('otherServicesGrid'); if(grid){grid.innerHTML='';(servicesData.services||[]).forEach(s=>{const c=document.createElement('article');c.className='service-dynamic';c.innerHTML=`<div class="service-topline"><div class="service-icon">${s.icon||'👑'}</div><span class="status-pill ${s.status}">${serviceStatusText(s.status)}</span></div><h3>${s.name}</h3><p>${s.description||''}</p>${s.price?`<div class="paint-meta">${s.price}</div>`:''}<button type="button">💬 Más info por WhatsApp</button>`;c.querySelector('button').onclick=()=>serviceWA(s.name,s.status,s.price?`Información: ${s.price}.`:'');grid.appendChild(c)})}
+  refreshServiceAdmin();
+}
+async function loadServices(force=false){
+  try{const r=await fetch(SERVICES_URL+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('No servicios.json');const server=await r.json();if(!server||!Array.isArray(server.paints)||!Array.isArray(server.services))throw new Error('Formato inválido');const local=localStorage.getItem(SERVICES_STORAGE_KEY);if(local&&!force){servicesData=JSON.parse(local);document.getElementById('serviceSource').textContent='Servicios: cambios locales'}else{servicesData=server;localStorage.removeItem(SERVICES_STORAGE_KEY);document.getElementById('serviceSource').textContent='Servicios: servicios.json del servidor'} }catch(e){const local=localStorage.getItem(SERVICES_STORAGE_KEY);servicesData=local?JSON.parse(local):JSON.parse(JSON.stringify(DEFAULT_SERVICES));document.getElementById('serviceSource').textContent=local?'Servicios: cambios locales':'Servicios: base incluida (sube servicios.json)'}renderServices()}
+function downloadServices(){const blob=new Blob([JSON.stringify(servicesData,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='servicios.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
+
+const mutationAdminSelected=new Set();
+function mutationAdminVisibleItems(){const q=norm((document.getElementById('mutationSearchAdmin')?.value||'').trim());return items.filter(i=>!q||norm(i.name).includes(q))}
+function refreshMutationManager(){const list=document.getElementById('mutationBulkList'),dl=document.getElementById('mutationOptions'),count=document.getElementById('mutationSelectedCount');if(!list||!dl||!count)return;const names=new Set(items.map(i=>i.name));[...mutationAdminSelected].forEach(n=>{if(!names.has(n))mutationAdminSelected.delete(n)});list.innerHTML='';mutationAdminVisibleItems().forEach(i=>{const label=document.createElement('label');label.className='mutation-admin-item';const cb=document.createElement('input');cb.type='checkbox';cb.checked=mutationAdminSelected.has(i.name);cb.onchange=()=>{cb.checked?mutationAdminSelected.add(i.name):mutationAdminSelected.delete(i.name);count.textContent=mutationAdminSelected.size+' seleccionados'};const span=document.createElement('span');span.textContent=i.name+(i.mutation?' · '+i.mutation:'');label.append(cb,span);list.appendChild(label)});const muts=[...new Map(items.map(i=>String(i.mutation||'').trim()).filter(Boolean).map(m=>[norm(m),m])).values()].sort((a,b)=>a.localeCompare(b,'es',{sensitivity:'base'}));dl.innerHTML='';muts.forEach(m=>{const o=document.createElement('option');o.value=m;dl.appendChild(o)});count.textContent=mutationAdminSelected.size+' seleccionados'}
+function refreshServiceAdmin(){const ps=document.getElementById('paintSelect'),ss=document.getElementById('serviceSelect');if(ps){const keep=ps.value;ps.innerHTML='';(servicesData.paints||[]).forEach((p,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=p.name;ps.appendChild(o)});if(ps.options.length){ps.value=[...ps.options].some(o=>o.value===keep)?keep:'0';loadPaintEditor()}}if(ss){const keep=ss.value;ss.innerHTML='';(servicesData.services||[]).forEach((s,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=s.name;ss.appendChild(o)});if(ss.options.length){ss.value=[...ss.options].some(o=>o.value===keep)?keep:'0';loadServiceEditor()}}}
+function loadPaintEditor(){const i=Number(document.getElementById('paintSelect')?.value||0),p=(servicesData.paints||[])[i];if(!p)return;document.getElementById('paintName').value=p.name||'';document.getElementById('paintStatus').value=p.status||'pendiente';document.getElementById('paintPrice').value=p.price||'';document.getElementById('paintNote').value=p.note||'';document.getElementById('paintImage').value=p.image||''}
+function loadServiceEditor(){const i=Number(document.getElementById('serviceSelect')?.value||0),s=(servicesData.services||[])[i];if(!s)return;document.getElementById('serviceStatus').value=s.status||'pendiente';document.getElementById('servicePrice').value=s.price||'';document.getElementById('serviceDescription').value=s.description||''}
+
+document.getElementById('mutationSearchAdmin').oninput=refreshMutationManager;
+document.getElementById('mutationSelectVisible').onclick=()=>{mutationAdminVisibleItems().forEach(i=>mutationAdminSelected.add(i.name));refreshMutationManager()};
+document.getElementById('mutationClearSelection').onclick=()=>{mutationAdminSelected.clear();refreshMutationManager()};
+document.getElementById('mutationApplyBulk').onclick=()=>{const v=document.getElementById('mutationBulkValue').value.trim();if(!mutationAdminSelected.size)return alert('Selecciona al menos un Brainrot.');if(!v)return alert('Escribe la mutación.');let n=0;items.forEach(i=>{if(mutationAdminSelected.has(i.name)&&i.mutation!==v){i.mutation=v;n++}});persistLocal();fillSelect();render();refreshMutationManager();alert('✅ Mutación aplicada a '+n+' Brainrot(s).')};
+document.getElementById('mutationRemoveBulk').onclick=()=>{if(!mutationAdminSelected.size)return alert('Selecciona al menos un Brainrot.');let n=0;items.forEach(i=>{if(mutationAdminSelected.has(i.name)&&i.mutation){i.mutation='';n++}});persistLocal();fillSelect();render();refreshMutationManager();alert('🧹 Mutación eliminada de '+n+' Brainrot(s).')};
+
+document.getElementById('paintSelect').onchange=loadPaintEditor;
+document.getElementById('paintSave').onclick=()=>{const i=Number(document.getElementById('paintSelect').value),p=servicesData.paints[i];if(!p)return;p.name=document.getElementById('paintName').value.trim()||p.name;p.status=document.getElementById('paintStatus').value;p.price=document.getElementById('paintPrice').value.trim();p.note=document.getElementById('paintNote').value.trim();p.image=document.getElementById('paintImage').value.trim();persistServices();renderServices();alert('✅ Pintada guardada. Descarga servicios.json para publicarla.')};
+document.getElementById('paintDelete').onclick=()=>{const i=Number(document.getElementById('paintSelect').value),p=servicesData.paints[i];if(!p)return;if(!confirm('¿Eliminar la pintada '+p.name+'?'))return;servicesData.paints.splice(i,1);persistServices();renderServices()};
+document.getElementById('paintAdd').onclick=()=>{const name=document.getElementById('paintNewName').value.trim();if(!name)return alert('Escribe el nombre del color.');if(servicesData.paints.some(p=>norm(p.name)===norm(name)))return alert('Ese color ya existe.');servicesData.paints.push({name,status:'pendiente',price:'',note:'',image:''});document.getElementById('paintNewName').value='';persistServices();renderServices()};
+document.getElementById('serviceSelect').onchange=loadServiceEditor;
+document.getElementById('serviceSave').onclick=()=>{const i=Number(document.getElementById('serviceSelect').value),s=servicesData.services[i];if(!s)return;s.status=document.getElementById('serviceStatus').value;s.price=document.getElementById('servicePrice').value.trim();s.description=document.getElementById('serviceDescription').value.trim();persistServices();renderServices();alert('✅ Servicio guardado. Descarga servicios.json para publicarlo.')};
+document.getElementById('exportServices').onclick=downloadServices;
+document.getElementById('reloadServices').onclick=()=>{if(confirm('Esto descartará cambios locales de Servicios y cargará servicios.json del servidor. ¿Continuar?'))loadServices(true)};
+
+search.addEventListener('input',render);
+
+const box=document.getElementById('adminbox'),sel=document.getElementById('adminSelect'),price=document.getElementById('adminPrice'),stock=document.getElementById('adminStock'),mutation=document.getElementById('adminMutation'),image=document.getElementById('adminImage'),notes=document.getElementById('adminNotes'),featured=document.getElementById('adminFeatured');
+function fillSelect(){sel.innerHTML='';items.forEach(i=>{const o=document.createElement('option');o.value=i.name;o.textContent=i.name;sel.appendChild(o)});refreshMutationBar();refreshMutationManager()}
+function loadEditor(){
+  const i=items.find(x=>x.name===sel.value);if(!i)return;
+  price.value=i.price||'';stock.value=i.stock||'por_confirmar';mutation.value=i.mutation||'';image.value=i.image||'';notes.value=i.notes||'';featured.checked=!!i.featured;
+  const p=document.getElementById('adminImagePreview'),m=document.getElementById('adminImageMsg');
+  if(!p||!m)return;
+  const custom=(i.image||'').trim();
+  const urls=custom?[custom,...autoImageCandidates(i.name)]:autoImageCandidates(i.name);
+  let k=0; p.style.display='none';
+  m.textContent=custom?'Probando imagen personalizada…':'Buscando imagen base automáticamente en el índice…';
+  p.onload=()=>{p.style.display='block';m.textContent=custom&&k===0?'✅ Imagen personalizada cargada.':'✅ Imagen base automática encontrada. No necesitas descargarla.'};
+  p.onerror=()=>{k++;if(k<urls.length){p.src=urls[k];return;}p.style.display='none';m.textContent='⚠️ El índice no entregó imagen para este nombre todavía.'};
+  p.src=urls[k];
+}
+function openEditor(name){box.classList.add('open');fillSelect();sel.value=name;loadEditor();box.scrollIntoView({behavior:'smooth',block:'start'})}
+document.getElementById('toggleAdmin').onclick=()=>{box.classList.toggle('open');fillSelect();if(!sel.value&&items[0])sel.value=items[0].name;loadEditor()}
+sel.onchange=loadEditor;
+
+// V6.9 · editor masivo
+const bulkBox=document.getElementById('bulkbox');
+const bulkInput=document.getElementById('bulkInput');
+const bulkResult=document.getElementById('bulkResult');
+document.getElementById('toggleBulk').onclick=()=>{
+  bulkBox.classList.toggle('open');
+  if(bulkBox.classList.contains('open')) setTimeout(()=>bulkBox.scrollIntoView({behavior:'smooth',block:'start'}),60);
+};
+function bulkStock(v){
+  const x=norm(String(v??'')).replace(/\s+/g,'_');
+  if(['disponible','available','si','sí','yes','1'].includes(x))return 'disponible';
+  if(['agotado','soldout','sold_out','no','0'].includes(x))return 'agotado';
+  if(['por_confirmar','porconfirmar','confirmar','pendiente','pending'].includes(x))return 'por_confirmar';
+  return String(v??'').trim()? 'por_confirmar' : '';
+}
+function bulkMutation(v){
+  const raw=String(v??'').trim();
+  const x=norm(raw).replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
+  if(!raw || ['sin mutacion','ninguna','none','default'].includes(x)) return '';
+  const map={
+    'fantasma':'Fantasma','phantom':'Fantasma','crystal':'Crystal','cristal':'Crystal',
+    'cyber':'Cyber','ciber':'Cyber','rainbow':'Rainbow','arcoiris':'Rainbow','arco iris':'Rainbow',
+    'divine':'Divine','divina':'Divine','cursed':'Cursed',
+    'radioactive':'Radioactive','radioactivo':'Radioactive','radioactiva':'Radioactive',
+    'yin yang':'Yin Yang','yinyang':'Yin Yang','galaxy':'Galaxy','galaxia':'Galaxy','lava':'Lava',
+    'candy':'Candy','bloodrot':'Bloodrot','blood rot':'Bloodrot','diamond':'Diamond','diamante':'Diamond',
+    'gold':'Gold','oro':'Gold'
+  };
+  return map[x] ?? null;
+}
+function bulkBool(v){
+  const x=norm(String(v??'')).trim();
+  if(['si','sí','yes','true','1','x','⭐'].includes(x))return true;
+  if(['no','false','0'].includes(x))return false;
+  return null;
+}
+
+function bulkField(obj,...keys){
+  for(const k of keys){if(Object.prototype.hasOwnProperty.call(obj,k))return obj[k]}
+  return undefined;
+}
+function normalizedBulkObject(obj){
+  // V7.9.9: conserva exactamente qué campos venían en el JSON original.
+  // Un campo AUSENTE jamás modifica el catálogo.
+  const out={__present:{}};
+  const take=(dest,...keys)=>{
+    for(const k of keys){
+      if(Object.prototype.hasOwnProperty.call(obj,k)){
+        out[dest]=obj[k];
+        out.__present[dest]=true;
+        return;
+      }
+    }
+  };
+  take('name','name','nombre');
+  take('price','price','precio');
+  take('stock','stock','estado');
+  take('mutation','mutation','mutacion','mutación');
+  take('image','image','imagen');
+  take('notes','notes','notas');
+  take('featured','featured','destacado');
+  return out;
+}
+function parseBulkText(txt){
+  const t=txt.trim();
+  if(!t)return [];
+  if(t.startsWith('[')){
+    const parsed=JSON.parse(t);
+    if(!Array.isArray(parsed))throw new Error('El JSON debe ser un arreglo');
+    return parsed.map(normalizedBulkObject);
+  }
+  return t.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).filter(x=>!x.startsWith('#')).map(line=>{
+    let parts=line.split('|').map(x=>x.trim());
+    if(parts.length===1 && line.includes('\t'))parts=line.split('\t').map(x=>x.trim());
+    if(parts.length===1 && line.includes(';'))parts=line.split(';').map(x=>x.trim());
+    const row={__present:{name:true},name:parts[0]};
+    const keys=['price','stock','mutation','image','notes','featured'];
+    keys.forEach((k,idx)=>{
+      if(parts.length>idx+1){
+        row[k]=parts[idx+1];
+        row.__present[k]=true;
+      }
+    });
+    return row;
+  });
+}
+function applyBulkRow(row,keepEmpty,addMissing){
+  const present=row.__present||{};
+  const name=String(row.name??'').trim();
+
+  if(!name){
+    return {type:'error',msg:'Fila sin nombre'};
+  }
+
+  let normalizedMutation;
+
+  if(present.mutation){
+    const rawMutation=String(row.mutation??'').trim();
+
+    if(!(keepEmpty && rawMutation==='')){
+      normalizedMutation=bulkMutation(rawMutation);
+
+      if(normalizedMutation===null){
+        return {
+          type:'error',
+          msg:name+' · mutación no válida: '+rawMutation
+        };
+      }
+    }
+  }
+
+  let item=items.find(x=>norm(x.name)===norm(name));
+  let added=false;
+
+  if(!item){
+    if(!addMissing){
+      return {type:'skip',msg:name+' no existe'};
+    }
+
+    item={
+      name,
+      price:'',
+      stock:'por_confirmar',
+      mutation:'',
+      image:'',
+      featured:false,
+      notes:''
+    };
+
+    items.push(item);
+    added=true;
+  }
+
+  const before=JSON.stringify(item);
+
+  const setText=(key)=>{
+    if(!present[key])return;
+
+    const text=String(row[key]??'').trim();
+
+    if(keepEmpty && text==='')return;
+
+    item[key]=text;
+  };
+
+  setText('price');
+
+  if(present.stock){
+    const raw=String(row.stock??'').trim();
+
+    if(!(keepEmpty && raw==='')){
+      const s=bulkStock(raw);
+
+      if(s){
+        item.stock=s;
+      }
+    }
+  }
+
+  if(normalizedMutation!==undefined){
+    item.mutation=normalizedMutation;
+  }
+
+  setText('image');
+  setText('notes');
+
+  if(present.featured){
+    const raw=String(row.featured??'').trim();
+
+    if(!(keepEmpty && raw==='')){
+      const b=bulkBool(raw);
+
+      if(b!==null){
+        item.featured=b;
+      }
+    }
+  }
+
+  const changed=before!==JSON.stringify(item);
+
+  return {
+    type:added ? 'add' : (changed ? 'update' : 'same'),
+    msg:name
+  };
+}
+
+document.getElementById('bulkExample').onclick=()=>{
+  bulkInput.value='Aguacate de Pipi | 40 | disponible | | images/Aguacate.jpg | $1.2M/s | no\nAlessio | 60 | agotado | Phantom | images/Alessio.jpg | $85K/s | sí';
+};
+document.getElementById('bulkApply').onclick=()=>{
+  try{
+    const rawText=(bulkInput.value||'').trim();
+    if(!rawText){alert('Pega al menos una fila o un arreglo JSON');return}
+    const rows=parseBulkText(rawText);
+    if(!rows.length){alert('No encontré filas válidas para aplicar');return}
+    const keep=document.getElementById('bulkKeepExisting').checked;
+    const addMissing=document.getElementById('bulkAddMissing').checked;
+    let updated=0,added=0,skipped=0,errors=[];
+    const changedNames=[];
+    for(const row of rows){
+      const r=applyBulkRow(row,keep,addMissing);
+      if(r.type==='update'){updated++;changedNames.push(r.msg)}
+      else if(r.type==='add'){added++;changedNames.push(r.msg)}
+      else if(r.type==='same'){}
+      else if(r.type==='skip')skipped++;
+      else errors.push(r.msg);
+    }
+    persistLocal();
+    fillSelect();
+    render();
+    refreshChangeSummary();
+    const total=updated+added;
+    const stamp=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    bulkResult.style.display='block';
+    bulkResult.innerHTML=`✅ <b>Lote aplicado correctamente</b> (${stamp})<br><b>${updated}</b> actualizados · <b>${added}</b> agregados · <b>${skipped}</b> omitidos${errors.length?' · <b>'+errors.length+'</b> errores':''}${changedNames.length?'<br><span style="font-size:12px">Primeros cambios: '+changedNames.slice(0,5).join(', ')+'</span>':''}<br><br>Ahora usa <b>📦 Preparar publicación</b> cuando termines.`;
+    bulkResult.scrollIntoView({behavior:'smooth',block:'center'});
+    alert(`✅ Lote aplicado: ${total} cambios (${updated} actualizados, ${added} agregados).`);
+  }catch(e){
+    bulkResult.style.display='block';
+    bulkResult.textContent='❌ No pude aplicar el lote: '+e.message;
+    bulkResult.scrollIntoView({behavior:'smooth',block:'center'});
+    alert('❌ No pude aplicar el lote: '+e.message);
+  }
+};
+
+function showAdminImagePreview(){
+  const p=document.getElementById('adminImagePreview');
+  const m=document.getElementById('adminImageMsg');
+  const u=(image.value||'').trim();
+  p.style.display='none';
+  if(u){
+    m.textContent='Probando imagen personalizada…';
+    p.onload=()=>{p.style.display='block';m.textContent='✅ Imagen personalizada encontrada.'};
+    p.onerror=()=>{p.style.display='none';m.textContent='❌ No se pudo cargar esa URL o ruta.'};
+    p.src=u+(u.includes('?')?'&':'?')+'v='+Date.now();
+    return;
+  }
+  const name=sel.value;
+  const urls=autoImageCandidates(name);
+  let k=0;
+  m.textContent='Buscando imagen base automáticamente en el índice…';
+  p.onload=()=>{p.style.display='block';m.textContent='✅ Imagen base automática encontrada. No necesitas descargarla.'};
+  p.onerror=()=>{k++;if(k<urls.length){p.src=urls[k];return;}p.style.display='none';m.textContent='⚠️ El índice no entregó imagen para este nombre todavía.'};
+  p.src=urls[k];
+}
+document.getElementById('imageFromFile').onclick=()=>{
+  const n=prompt('Escribe el nombre exacto del archivo que subiste a /images\nEjemplo: Phantom_1x1x1x1 (1).webp');
+  if(!n)return;
+  let clean=n.trim();
+  if(clean.startsWith('images/')) clean=clean.slice(7);
+  image.value='images/'+clean;
+  showAdminImagePreview();
+};
+document.getElementById('testImage').onclick=showAdminImagePreview;
+
+
+document.getElementById('saveItem').onclick=()=>{const i=items.find(x=>x.name===sel.value);if(!i)return;i.price=price.value.trim();i.stock=stock.value;i.mutation=mutation.value.trim();i.image=image.value.trim();i.notes=notes.value.trim();i.featured=featured.checked;const keep=i.name;persistLocal();fillSelect();sel.value=keep;loadEditor();render();alert('Cambios guardados en este dispositivo. Para publicarlos para todos, exporta catalogo.json.')}
+
+document.getElementById('deleteItem').onclick=()=>{const name=sel.value;if(!name)return;if(!confirm('¿Eliminar "'+name+'" del catálogo en este dispositivo?'))return;items=items.filter(x=>x.name!==name);persistLocal();fillSelect();if(items.length){sel.value=items[0].name;loadEditor()}render();alert('Brainrot eliminado. Exporta catalogo.json para publicarlo para todos.')}
+
+document.getElementById('addItem').onclick=()=>{const name=document.getElementById('newName').value.trim();if(!name){alert('Escribe el nombre del Brainrot');return}if(items.some(x=>norm(x.name)===norm(name))){alert('Ese Brainrot ya existe en el catálogo');return}const nuevo={name,price:document.getElementById('newPrice').value.trim(),stock:document.getElementById('newStock').value,mutation:document.getElementById('newMutation').value.trim(),image:document.getElementById('newImage').value.trim(),notes:document.getElementById('newNotes').value.trim(),featured:document.getElementById('newFeatured').checked};items.push(nuevo);persistLocal();fillSelect();sel.value=name;loadEditor();render();['newName','newPrice','newMutation','newImage','newNotes'].forEach(id=>document.getElementById(id).value='');document.getElementById('newStock').value='por_confirmar';document.getElementById('newFeatured').checked=false;alert('Brainrot agregado. Exporta catalogo.json para publicarlo para todos.')}
+
+function makeJsonBlob(){return new Blob([JSON.stringify(items,null,2)],{type:'application/json'});}
+function triggerDownload(){
+  const blob=makeJsonBlob(),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='catalogo.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),500);
+}
+function openPublishGuide(){
+  refreshChangeSummary();
+  box.classList.add('open');
+  const p=document.getElementById('publishBox');
+  p.classList.add('open');
+  setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'start'}),80);
+}
+function preparePublication(){openPublishGuide()}
+document.getElementById('exportData').onclick=preparePublication;
+document.getElementById('exportData2').onclick=preparePublication;
+document.getElementById('downloadJsonNow').onclick=triggerDownload;
+document.getElementById('copyJson').onclick=async()=>{try{await navigator.clipboard.writeText(JSON.stringify(items,null,2));const ok=document.getElementById('copyOk');ok.style.display='block';setTimeout(()=>ok.style.display='none',2500)}catch(e){alert('No se pudo copiar automáticamente. Usa Descargar JSON.')}};
+document.getElementById('openCatalogGithub').onclick=()=>window.open('https://github.com/Manitos-shop/Manitos-shop/edit/main/catalogo.json','_blank');
+document.getElementById('openRepo').onclick=()=>window.open('https://github.com/Manitos-shop/Manitos-shop','_blank');
+document.getElementById('closePublish').onclick=()=>document.getElementById('publishBox').classList.remove('open');
+
+const importFile=document.getElementById('importFile');
+function openImport(){importFile.click()}
+document.getElementById('importBtn').onclick=openImport;
+document.getElementById('importData2').onclick=openImport;
+importFile.onchange=async()=>{const f=importFile.files[0];if(!f)return;try{const parsed=JSON.parse(await f.text());if(!Array.isArray(parsed))throw new Error('Formato inválido');items=parsed;sortItems();persistLocal();fillSelect();render();alert('Datos importados correctamente')}catch(e){alert('No pude importar el archivo JSON')}finally{importFile.value=''}}
+
+
+function snapshotBaseline(){baselineItems=JSON.parse(JSON.stringify(items));}
+function itemKey(x){return (x.name||'').trim().toLowerCase()}
+function getChanges(){
+  const oldMap=new Map(baselineItems.map(x=>[itemKey(x),x]));
+  const newMap=new Map(items.map(x=>[itemKey(x),x]));
+  const fields=['price','stock','mutation','image','featured','notes'];
+  const labels={price:'precio',stock:'estado',mutation:'mutación',image:'imagen',featured:'destacado',notes:'notas'};
+  const changes=[];
+  for(const [k,n] of newMap){
+    const o=oldMap.get(k);
+    if(!o){changes.push({name:n.name,desc:'Nuevo Brainrot'});continue}
+    const diffs=[];
+    for(const f of fields){if(String(o[f]??'')!==String(n[f]??''))diffs.push(labels[f]);}
+    if(diffs.length)changes.push({name:n.name,desc:'Cambió: '+diffs.join(', ')});
+  }
+  for(const [k,o] of oldMap){if(!newMap.has(k))changes.push({name:o.name,desc:'Eliminado'});}
+  return changes;
+}
+function refreshChangeSummary(){
+  const changes=getChanges(),count=document.getElementById('changeCount'),list=document.getElementById('changeList');
+  if(!count||!list)return;
+  list.innerHTML='';
+  if(!changes.length){count.textContent='Sin cambios detectados.';return}
+  count.innerHTML='<b>'+changes.length+'</b> cambio(s) pendiente(s) de publicar.';
+  changes.slice(0,12).forEach(c=>{const li=document.createElement('li');li.textContent=c.name+' — '+c.desc;list.appendChild(li)});
+  if(changes.length>12){const li=document.createElement('li');li.textContent='…y '+(changes.length-12)+' más';list.appendChild(li)}
+}
+
+async function loadServer(force=false){
+  const pagesUrl='https://manitos-shop.github.io/Manitos-shop/catalogo.json?ts='+Date.now();
+  const rawUrl='https://raw.githubusercontent.com/Manitos-shop/Manitos-shop/main/catalogo.json?ts='+Date.now();
+
+  function normalize(server){
+    if(!Array.isArray(server)) throw new Error('El JSON no es una lista');
+    return server.map(x=>({
+      name:x.name ?? x.nombre ?? '',
+      price:x.price ?? x.precio ?? '',
+      stock:x.stock ?? 'por_confirmar',
+      mutation:x.mutation ?? x['mutación'] ?? x.mutacion ?? '',
+      image:x.image ?? x.imagen ?? '',
+      featured:x.featured ?? x.destacado ?? false,
+      notes:x.notes ?? x.notas ?? ''
+    })).filter(x=>x.name);
+  }
+
+  async function tryUrl(url,label){
+    const r=await fetch(url,{cache:'no-store'});
+    if(!r.ok) throw new Error(label+' respondió HTTP '+r.status);
+    let data;
+    try{
+      data=await r.json();
+    }catch(e){
+      throw new Error(label+' respondió, pero no como JSON válido: '+e.message);
+    }
+    return normalize(data);
+  }
+
+  syncState.innerHTML='Fuente: <b>consultando servidor…</b>';
+
+  let server=null;
+  let used='';
+  let errors=[];
+
+  try{
+    server=await tryUrl(pagesUrl,'GitHub Pages');
+    used='GitHub Pages';
+  }catch(e){
+    errors.push(e.message);
+    try{
+      server=await tryUrl(rawUrl,'GitHub Raw');
+      used='GitHub Raw';
+    }catch(e2){
+      errors.push(e2.message);
+    }
+  }
+
+  if(server){
+    const local=localStorage.getItem(STORAGE_KEY);
+    if(local && !force){
+      baselineItems=JSON.parse(JSON.stringify(server));
+      items=JSON.parse(local);
+      syncState.innerHTML='Fuente: <b>cambios locales</b> · servidor disponible vía '+used;
+    }else{
+      items=server;
+      sortItems();
+      snapshotBaseline();
+      localStorage.removeItem(STORAGE_KEY);
+      syncState.innerHTML='Fuente: <b>catalogo.json del servidor</b> · vía '+used;
+    }
+    fillSelect();
+    render();
+    return;
+  }
+
+  const local=localStorage.getItem(STORAGE_KEY);
+  if(local){
+    items=JSON.parse(local);
+    syncState.innerHTML='Fuente: <b>cambios locales</b><br><small>Error real: '+errors.join(' | ')+'</small>';
+  }else{
+    items=clone(BASE_ITEMS);
+    snapshotBaseline();
+    syncState.innerHTML='Fuente: <b>base incluida</b><br><small>Error real: '+errors.join(' | ')+'</small>';
+  }
+  sortItems();
+  fillSelect();
+  render();
+}
+document.getElementById('reloadServer').onclick=()=>{if(confirm('Esto descartará los cambios locales y cargará catalogo.json del servidor. ¿Continuar?'))loadServer(true)}
+
+loadServer().then(()=>refreshChangeSummary());
+loadServices();
+</script>
+</body></html>
