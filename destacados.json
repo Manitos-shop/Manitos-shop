@@ -1,0 +1,15 @@
+{
+  "weekly": {
+    "enabled": false,
+    "name": "",
+    "mutation": "",
+    "price": ""
+  },
+  "wanted": {
+    "enabled": false,
+    "mode": "manual",
+    "name": "",
+    "mutation": "",
+    "image": ""
+  }
+}
