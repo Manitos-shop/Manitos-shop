@@ -568,6 +568,28 @@ body.services-admin-mode .section-tab[data-view="catalog"]{
 #toggleAdminMenu.admin-open{border-color:#9b58ff!important;background:linear-gradient(135deg,#2a1746,#1a102c)!important}
 
 </style>
+
+<style id="firebase-auth-v7120">
+#authAdminStatus{margin-top:8px;font-size:13px;color:#b9a8d8;text-align:center}
+#adminLogoutBtn{display:none!important}
+#adminLogoutBtn.show{display:block!important;grid-column:1/-1;border-color:#7044a8!important;background:#160d24!important;color:#f0e7ff!important}
+#authAdminStatus.ok{color:#65d98b}
+#authAdminStatus.err{color:#ff7c92}
+#authAdminStatus.wait{color:#f5c96a}
+#adminLoginOverlay{position:fixed;inset:0;z-index:99999;background:rgba(7,4,12,.82);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:22px}
+#adminLoginOverlay.open{display:flex}
+.admin-login-card{width:min(420px,100%);background:linear-gradient(180deg,#1b1229,#100b18);border:1px solid #6f43a8;border-radius:22px;padding:24px;box-shadow:0 24px 70px rgba(0,0,0,.55);text-align:center}
+.admin-login-card h2{margin:0 0 8px;font-size:25px}
+.admin-login-card p{color:#c7bdd5;line-height:1.45}
+.admin-login-google{width:100%;min-height:54px;border:1px solid #8a5bd0;border-radius:15px;background:#25173a;color:white;font-weight:800;font-size:17px}
+.admin-login-cancel{margin-top:10px;width:100%;min-height:46px;border:0;background:transparent;color:#b9a8d8;font-weight:700}
+#adminLoginMsg{min-height:22px;margin-top:10px;font-size:14px;color:#f5c96a}
+
+/* V7.12.0 · estado administrativo bloqueado */
+.admin-auth-locked #adminMenu [data-auth-locked="1"],
+.admin-auth-locked #adminbox [data-auth-locked="1"]{pointer-events:none!important;opacity:.42!important;filter:saturate(.45)}
+</style>
+
 </head>
 <body>
 <div class="toolbar"><div class="wrap">
@@ -594,6 +616,7 @@ body.services-admin-mode .section-tab[data-view="catalog"]{
 <button id="exportData">📦 Preparar publicación</button>
 <button id="importBtn">⬆️ Importar datos</button>
 <button id="reloadServer">🌐 Actualizar servidor</button>
+<button type="button" id="adminLogoutBtn">🚪 Cerrar sesión</button>
 </div>
 <div class="syncbar">
   <div class="state" id="syncState">Fuente: <b>cargando…</b></div>
@@ -606,7 +629,7 @@ body.services-admin-mode .section-tab[data-view="catalog"]{
 <article id="weeklySpecialCard" class="promo-card promo-hidden"><div class="promo-head">⭐ Especial de la semana</div><div class="promo-content"><img id="weeklySpecialImg" alt=""><div><div id="weeklySpecialName" class="promo-name"></div><div id="weeklySpecialMutation" class="promo-meta"></div><div id="weeklySpecialPrice" class="promo-price"></div><a id="weeklySpecialWa" class="promo-wa" target="_blank">💬 Preguntar por WhatsApp</a></div></div></article>
 <article id="wantedCard" class="promo-card wanted-feature promo-hidden"><div class="promo-head">🔎 Se busca este Brainrot</div><div class="wanted-note">¿Lo tienes? Manitos Shop lo está buscando.</div><div class="promo-content"><img id="wantedImg" alt=""><div><div id="wantedName" class="promo-name"></div><div id="wantedMutation" class="promo-meta"></div><a id="wantedWa" class="promo-wa wanted-wa" target="_blank" rel="noopener">💬 LO TENGO · ENVIAR WHATSAPP</a></div></div></article>
 </section>
-<section class="hero"><h1>👑 <span>MANITOS</span> SHOP 👑</h1><p>Catálogo Brainrots · versión 7.12.0</p></section>
+<section class="hero"><h1>👑 <span>MANITOS</span> SHOP 👑</h1><p>Catálogo Brainrots · versión 7.11.9</p></section>
 <div class="summary" id="catalogSummary"><div><strong id="count">174</strong> resultados</div><div id="filterLabel">Todos</div></div>
 
 <section id="servicesSection" class="services-section" aria-label="Servicios Manitos Shop">
@@ -656,13 +679,6 @@ body.services-admin-mode .section-tab[data-view="catalog"]{
 <div id="wantedManualFields" style="display:none"><label>Nombre del Brainrot</label><input id="wantedManualName" placeholder="Ej. Los Sekolahs"><label>Imagen / ruta (opcional)</label><input id="wantedManualImage" placeholder="images/brainrot.png o URL pública"><div class="hint">No se agrega al catálogo de venta; solamente aparecerá en “Se busca”.</div></div>
 <label>Mutación buscada</label><input id="wantedMutationInput" placeholder="Ej. Bloodrot"></div>
 <button id="saveFeatureSections" type="button" style="width:100%;padding:13px;border:0;border-radius:12px;background:var(--gold);font-weight:950">💾 Guardar apartados destacados</button><div id="featureSaveStatus" style="display:none;margin-top:10px;padding:12px;border-radius:12px;text-align:center;font-weight:900"></div>
-<div class="feature-admin" style="margin-top:14px">
-<h3>🌐 Publicar apartados destacados</h3>
-<div class="small">Guarda primero tus cambios. Después descarga <b>destacados.json</b> y reemplázalo en GitHub. Así todos los visitantes verán el mismo Especial y Se busca.</div>
-<button id="downloadFeaturedJson" type="button" class="save" style="width:100%;margin-top:10px">⬇️ Descargar destacados.json</button>
-<button id="reloadFeaturedServer" type="button" class="ghost" style="width:100%;margin-top:10px">🌐 Recargar destacados del servidor</button>
-<div id="featuredSource" class="small" style="margin-top:10px">Destacados: cambios locales</div>
-</div>
 
 <h3>Editor rápido</h3>
 <div class="small">Edita aquí precio, stock, mutación, imagen y notas. Los cambios primero se guardan en este dispositivo. Cuando termines, usa <b>Preparar publicación</b> para generar el <b>catalogo.json</b> actualizado y seguir la guía.</div>
@@ -1686,62 +1702,225 @@ loadServices();
 </script>
 <script>
 (function(){
-const KEY='manitos_feature_sections_v7110', SERVER='destacados.json';
+const KEY='manitos_feature_sections_v7110';
 const def={weekly:{enabled:false,name:'',mutation:'',price:''},wanted:{enabled:false,mode:'catalog',name:'',mutation:'',image:''}};
-let serverData=null;
-function normalize(x){x=x||{};return {weekly:{...def.weekly,...(x.weekly||{})},wanted:{...def.wanted,...(x.wanted||{})}}}
-function localCfg(){try{const raw=localStorage.getItem(KEY);return raw?normalize(JSON.parse(raw)):null}catch(e){return null}}
-function cfg(){return localCfg()||serverData||normalize(def)}
+function cfg(){try{const x=JSON.parse(localStorage.getItem(KEY)||'{}');return {weekly:{...def.weekly,...(x.weekly||{})},wanted:{...def.wanted,...(x.wanted||{})}}}catch(e){return JSON.parse(JSON.stringify(def))}}
 function allItems(){try{return Array.isArray(items)?items:[]}catch(e){return []}}
 function imageFor(n){const x=allItems().find(i=>i.name===n);return x&&x.image?x.image:''}
 function walink(msg){return 'https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg)}
 function setMode(m){wantedCatalogFields.style.display=m==='manual'?'none':'block';wantedManualFields.style.display=m==='manual'?'block':'none'}
-function sourceText(t){const e=document.getElementById('featuredSource');if(e)e.textContent=t}
 function render(){
  const c=cfg(),w=c.weekly,q=c.wanted,wc=document.getElementById('weeklySpecialCard'),qc=document.getElementById('wantedCard');
  if(wc){wc.classList.toggle('promo-hidden',!(w.enabled&&w.name));if(w.enabled&&w.name){weeklySpecialName.textContent=w.name;weeklySpecialMutation.textContent=w.mutation?'Mutación: '+w.mutation:'Consulta mutación disponible';weeklySpecialPrice.textContent=w.price?'$'+w.price+' MX':'';const u=imageFor(w.name);weeklySpecialImg.src=u;weeklySpecialImg.style.display=u?'block':'none';weeklySpecialWa.href=walink('Hola Admin Keren🍓, vi el Especial de la semana en Manitos Shop: '+w.name+(w.mutation?' · Mutación '+w.mutation:'')+'. ¿Me das más información?')}}
  if(qc){qc.classList.toggle('promo-hidden',!(q.enabled&&q.name));if(q.enabled&&q.name){wantedName.textContent=q.name;wantedMutation.textContent=q.mutation?'Mutación buscada: '+q.mutation:'Cualquier mutación';const u=q.mode==='manual'?(q.image||''):imageFor(q.name);wantedImg.src=u;wantedImg.alt=q.name;wantedImg.style.display=u?'block':'none';qc.classList.toggle('has-image',!!u);qc.classList.toggle('no-image',!u);wantedWa.href=walink('Hola Admin Keren🍓, vi en Manitos Shop que están buscando '+q.name+(q.mutation?' con mutación '+q.mutation:'')+'. Yo lo tengo.')}}
 }
-function fillForm(c){
- weeklyEnabled.checked=!!c.weekly.enabled;weeklyBrainrot.value=c.weekly.name||'';weeklyMutation.value=c.weekly.mutation||'';weeklyPrice.value=c.weekly.price||'';
- wantedEnabled.checked=!!c.wanted.enabled;wantedMode.value=c.wanted.mode||'catalog';
- if(c.wanted.mode==='manual'){wantedManualName.value=c.wanted.name||'';wantedManualImage.value=c.wanted.image||'';wantedBrainrot.value=''}else{wantedBrainrot.value=c.wanted.name||'';wantedManualName.value='';wantedManualImage.value=''}
- wantedMutationInput.value=c.wanted.mutation||'';setMode(wantedMode.value)
-}
-async function loadServer(force=false){
- try{
-  const r=await fetch(SERVER+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error();
-  serverData=normalize(await r.json());
-  if(force){localStorage.removeItem(KEY);fillForm(serverData)}
-  sourceText(force?'Destacados: cargados desde destacados.json del servidor':'Destacados: destacados.json del servidor');
-  render();return true
- }catch(e){
-  if(!localCfg())serverData=normalize(def);
-  sourceText('Destacados: archivo destacados.json aún no publicado');
-  render();return false
- }
-}
-function download(data){
- const blob=new Blob([JSON.stringify(normalize(data),null,2)],{type:'application/json;charset=utf-8'});
- const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='destacados.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
-}
 function init(){
  const names=[...new Set(allItems().map(x=>x.name).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
  ['weeklyBrainrot','wantedBrainrot'].forEach(id=>{const s=document.getElementById(id);if(!s)return;s.innerHTML='<option value="">Seleccionar Brainrot</option>';names.forEach(n=>{const o=document.createElement('option');o.value=n;o.textContent=n;s.appendChild(o)})});
- fillForm(cfg());wantedMode.addEventListener('change',()=>setMode(wantedMode.value));
+ const c=cfg();weeklyEnabled.checked=!!c.weekly.enabled;weeklyBrainrot.value=c.weekly.name;weeklyMutation.value=c.weekly.mutation;weeklyPrice.value=c.weekly.price;
+ wantedEnabled.checked=!!c.wanted.enabled;wantedMode.value=c.wanted.mode||'catalog';if(c.wanted.mode==='manual'){wantedManualName.value=c.wanted.name||'';wantedManualImage.value=c.wanted.image||''}else wantedBrainrot.value=c.wanted.name||'';wantedMutationInput.value=c.wanted.mutation||'';setMode(wantedMode.value);
+ wantedMode.addEventListener('change',()=>setMode(wantedMode.value));
  const saveBtn=document.getElementById('saveFeatureSections'),saveStatus=document.getElementById('featureSaveStatus');
  saveBtn.addEventListener('click',()=>{
   const weeklyOn=weeklyEnabled.checked,wantedOn=wantedEnabled.checked,mode=wantedMode.value,weeklyName=weeklyBrainrot.value,wantedN=(mode==='manual'?wantedManualName.value:wantedBrainrot.value).trim();
   if(weeklyOn&&!weeklyName){saveStatus.style.display='block';saveStatus.style.background='#4a1f2a';saveStatus.style.color='#ffd1d8';saveStatus.textContent='⚠️ Selecciona un Brainrot para el Especial de la semana.';return}
   if(wantedOn&&!wantedN){saveStatus.style.display='block';saveStatus.style.background='#4a1f2a';saveStatus.style.color='#ffd1d8';saveStatus.textContent='⚠️ Escribe o selecciona el Brainrot que estás buscando.';return}
   const data={weekly:{enabled:weeklyOn,name:weeklyName,mutation:weeklyMutation.value.trim(),price:weeklyPrice.value.trim()},wanted:{enabled:wantedOn,mode,name:wantedN,mutation:wantedMutationInput.value.trim(),image:mode==='manual'?wantedManualImage.value.trim():''}};
-  localStorage.setItem(KEY,JSON.stringify(data));render();sourceText('Destacados: cambios locales · falta publicar destacados.json');
-  saveStatus.style.display='block';saveStatus.style.background='#173b2b';saveStatus.style.color='#bfffd9';saveStatus.textContent='✅ Guardado localmente · descarga destacados.json para publicarlo';saveBtn.textContent='✅ Guardado';setTimeout(()=>saveBtn.textContent='💾 Guardar apartados destacados',1400)
+  localStorage.setItem(KEY,JSON.stringify(data));render();saveStatus.style.display='block';saveStatus.style.background='#173b2b';saveStatus.style.color='#bfffd9';saveStatus.textContent='✅ Guardado correctamente'+(wantedOn?' · Se busca: '+wantedN:'');saveBtn.textContent='✅ Guardado';setTimeout(()=>saveBtn.textContent='💾 Guardar apartados destacados',1400)
  });
- document.getElementById('downloadFeaturedJson').addEventListener('click',()=>{download(cfg());sourceText('Destacados: destacados.json descargado · súbelo a GitHub')});
- document.getElementById('reloadFeaturedServer').addEventListener('click',async()=>{if(confirm('Esto descartará los cambios locales de Especial/Se busca y cargará destacados.json del servidor. ¿Continuar?'))await loadServer(true)});
- loadServer(false).then(()=>{fillForm(cfg());render()});
+ render()
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(init,350));else setTimeout(init,350);
 })();
-</script></body></html>
+</script>
+<div id="adminLoginOverlay" aria-hidden="true">
+  <div class="admin-login-card">
+    <div style="font-size:34px">🔐</div>
+    <h2>Administración Manitos Shop</h2>
+    <p>Para abrir las herramientas de administración, inicia sesión con la cuenta de Google autorizada.</p>
+    <button type="button" id="adminGoogleLogin" class="admin-login-google">G&nbsp;&nbsp;Continuar con Google</button>
+    <div id="adminLoginMsg"></div>
+    <button type="button" id="adminLoginCancel" class="admin-login-cancel">Cancelar</button>
+  </div>
+</div>
+
+
+<script type="module" id="firebase-auth-module-v7120">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import {
+  getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyApW5me0fF8IeAo1UOD4Cp6PFNHaaC1xYI",
+  authDomain: "manitos-shop.firebaseapp.com",
+  projectId: "manitos-shop",
+  storageBucket: "manitos-shop.firebasestorage.app",
+  messagingSenderId: "168009228458",
+  appId: "1:168009228458:web:50f3b2ecbe6732654f70d3",
+  measurementId: "G-7SQ9PQ7SX3"
+};
+
+const ADMIN_EMAIL = "aloykike929@gmail.com";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({prompt:"select_account"});
+
+let currentUser = null;
+let authReady = false;
+
+const adminButton = document.getElementById("toggleAdminMenu");
+const overlay = document.getElementById("adminLoginOverlay");
+const loginBtn = document.getElementById("adminGoogleLogin");
+const cancelBtn = document.getElementById("adminLoginCancel");
+const msg = document.getElementById("adminLoginMsg");
+
+const status = document.createElement("div");
+status.id = "authAdminStatus";
+adminButton.insertAdjacentElement("afterend", status);
+const logoutBtn = document.getElementById("adminLogoutBtn");
+
+function isAdmin(user){
+  return !!user && String(user.email || "").toLowerCase() === ADMIN_EMAIL.toLowerCase();
+}
+
+// V7.12.0 · bloqueo de acciones administrativas en la interfaz.
+// Firebase confirma la identidad; sin la cuenta autorizada no se ejecutan controles admin.
+function requireAdmin(ev){
+  if(isAdmin(currentUser)) return true;
+  if(ev){
+    ev.preventDefault();
+    ev.stopPropagation();
+    if(typeof ev.stopImmediatePropagation === "function") ev.stopImmediatePropagation();
+  }
+  openLogin();
+  msg.textContent = authReady ? "Inicia sesión con la cuenta administradora para continuar." : "Verificando sesión…";
+  return false;
+}
+
+function setAdminLocked(locked){
+  document.documentElement.classList.toggle("admin-auth-locked", locked);
+  const zones=[document.getElementById("adminMenu"),document.getElementById("adminbox")].filter(Boolean);
+  zones.forEach(zone=>{
+    zone.setAttribute("aria-disabled", locked ? "true" : "false");
+    zone.querySelectorAll("button,input,select,textarea,a").forEach(el=>{
+      if(el.id === "adminLogoutBtn") return;
+      if(locked){ el.setAttribute("data-auth-locked","1"); el.setAttribute("tabindex","-1"); }
+      else { el.removeAttribute("data-auth-locked"); el.removeAttribute("tabindex"); }
+    });
+  });
+}
+
+["click","change","input","submit"].forEach(type=>{
+  document.addEventListener(type,(ev)=>{
+    const t=ev.target;
+    if(!t || !t.closest) return;
+    if(t.closest("#adminLoginOverlay") || t.closest("#adminLogoutBtn") || t.closest("#toggleAdminMenu")) return;
+    if(t.closest("#adminMenu") || t.closest("#adminbox")) requireAdmin(ev);
+  },true);
+});
+function setStatus(text, cls=""){
+  status.textContent = text;
+  status.className = cls;
+}
+function openLogin(){
+  msg.textContent = "";
+  overlay.classList.add("open");
+  overlay.setAttribute("aria-hidden","false");
+}
+function closeLogin(){
+  overlay.classList.remove("open");
+  overlay.setAttribute("aria-hidden","true");
+}
+
+onAuthStateChanged(auth, async (user)=>{
+  authReady = true;
+  currentUser = user;
+  if(!user){
+    setStatus("🔒 Administración protegida con Google");
+    logoutBtn.classList.remove("show");
+    setAdminLocked(true);
+    return;
+  }
+  if(isAdmin(user)){
+    setStatus("✅ Admin: " + user.email, "ok");
+    logoutBtn.classList.add("show");
+    setAdminLocked(false);
+    closeLogin();
+  }else{
+    setStatus("⛔ Cuenta sin permiso de administración", "err");
+    msg.textContent = "Esta cuenta no está autorizada.";
+    try{ await signOut(auth); }catch(e){}
+    currentUser = null;
+    setAdminLocked(true);
+  }
+});
+
+adminButton.addEventListener("click",(ev)=>{
+  if(!authReady || !isAdmin(currentUser)){
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+    openLogin();
+  }
+}, true);
+
+async function processRedirect(){
+  try{
+    const result = await getRedirectResult(auth);
+    if(result && result.user){
+      if(!isAdmin(result.user)){
+        msg.textContent = "Esta cuenta no tiene permiso de administración.";
+        await signOut(auth);
+      }else{
+        closeLogin();
+      }
+    }
+  }catch(e){
+    const code = e?.code || "";
+    if(code.includes("unauthorized-domain")){
+      msg.textContent = "Falta autorizar el dominio de GitHub Pages en Firebase.";
+    }else{
+      msg.textContent = "No se pudo completar el acceso: " + (code || "error desconocido");
+      openLogin();
+    }
+  }
+}
+processRedirect();
+
+loginBtn.addEventListener("click", async ()=>{
+  msg.textContent = "Redirigiendo a Google…";
+  loginBtn.disabled = true;
+  try{
+    await signInWithRedirect(auth, provider);
+  }catch(e){
+    loginBtn.disabled = false;
+    const code = e?.code || "";
+    if(code.includes("unauthorized-domain")){
+      msg.textContent = "Falta autorizar el dominio de GitHub Pages en Firebase.";
+    }else{
+      msg.textContent = "No se pudo abrir Google: " + (code || "error desconocido");
+    }
+  }
+});
+logoutBtn.addEventListener("click", async ()=>{
+  try{
+    await signOut(auth);
+    currentUser = null;
+    setAdminLocked(true);
+    logoutBtn.classList.remove("show");
+    setStatus("🔒 Administración protegida con Google");
+    const panel = document.getElementById("adminMenu");
+    if(panel) panel.classList.remove("open");
+    adminButton.classList.remove("admin-open");
+    openLogin();
+    msg.textContent = "Sesión cerrada correctamente.";
+  }catch(e){
+    setStatus("No se pudo cerrar la sesión.", "err");
+  }
+});
+cancelBtn.addEventListener("click", closeLogin);
+overlay.addEventListener("click",(e)=>{ if(e.target===overlay) closeLogin(); });
+</script>
+
+</body></html>
